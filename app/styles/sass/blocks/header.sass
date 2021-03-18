@@ -1,0 +1,206 @@
+.header
+  position: relative
+  &-top
+    padding: 19px 0 22px
+    background: #070707
+    border-bottom: 1px solid rgba(244, 198, 131, 0.32)
+    +media-breakpoint-down(md)
+      padding: 24px 0
+    .site-description
+      margin-left: 11px
+      margin-top: 4px
+      +media-breakpoint-down(md)
+        display: none
+    .site-phones
+      margin-left: 29px
+      margin-top: 5px
+      +media-breakpoint-down(lg)
+        display: none
+    .lang-switcher
+      margin-top: 5px
+      +media-breakpoint-down(lg)
+        display: none
+  &-bottom
+    background: $bodyBgColor
+    +media-breakpoint-down(lg)
+      position: absolute
+      top: 90px
+      left: -100%
+      width: 100%
+      height: 100vh
+      z-index: 99
+      visibility: hidden
+      opacity: 0
+      transition: $trs
+    +media-breakpoint-down(md)
+      top: 100px
+    &.active
+      left: 0
+      visibility: visible
+      opacity: 1
+    .lang-switcher
+      display: none
+      +media-breakpoint-down(lg)
+        display: flex
+        flex-direction: row-reverse
+        position: absolute
+        right: 15px
+        top: 34px
+      &__links
+        margin-right: 0
+      &__img
+        margin-right: 11px
+
+.site-information
+  position: relative
+  display: flex
+  align-items: center
+
+.logotype
+  display: block
+  max-width: 253px
+  +media-breakpoint-down(md)
+    max-width: 246px
+  img
+    max-width: 100%
+    height: auto
+
+.site-description
+  position: relative
+  img
+    max-width: 314px
+    height: auto
+
+.site-phones
+  display: flex
+  align-items: center
+.phone-item
+  position: relative
+  display: flex
+  align-items: center
+  margin-right: 29px
+  &.whatsapp
+    margin-right: 7px
+    &:hover
+      .phone-item__icon
+        background: #87ce02
+    .phone-item__icon
+      background: #4FA647
+  &:hover
+    .phone-item__icon
+      background: $textcolor
+      cursor: pointer
+    a
+      color: $textcolor
+      text-decoration: none
+  &__icon
+    width: 25px
+    height: 25px
+    background: $accent
+    border-radius: 50%
+    text-align: center
+    line-height: 25px
+    margin-right: 7px
+    font-weight: 500
+    transition: $trs
+  a
+    color: $accent
+    transition: $trs
+    letter-spacing: 0.05em
+    font-size: 14px
+
+.lang-switcher
+  position: relative
+  display: flex
+  align-items: center
+  &__img
+    width: 25px
+    height: 25px
+    border-radius: 50%
+    overflow: hidden
+    img
+      max-width: 100%
+      height: auto
+  &__links
+    position: relative
+    line-height: 15px
+    margin-right: 7px
+    a
+      font-size: 12px
+      color: $textcolor
+      &:hover
+        text-decoration: none
+      &.active
+        color: $accent
+
+.navbar
+  display: flex
+  justify-content: space-between
+  padding: 22px 0 23px
+  +media-breakpoint-down(lg)
+    flex-direction: column
+  a
+    color: rgba(255, 255, 255, 0.75)
+    text-transform: uppercase
+    font-size: 14px
+    font-weight: 500
+    line-height: 17px
+    display: inline-block
+    letter-spacing: 0.02em
+    transition: $trs
+    +media-breakpoint-down(lg)
+      padding: 16px 0
+    &:hover
+      color: $accent
+      text-decoration: none
+      svg
+        fill: $accent
+    svg
+      fill: rgba(255, 255, 255, 0.75)
+      margin-left: -2px
+      margin-right: 5px
+      margin-bottom: 4px
+      transition: $trs
+
+// Hamburger Block
+.hamburger
+  position: relative
+  width: 40px
+  height: 40px
+  cursor: pointer
+  justify-content: flex-end
+  align-items: center
+  display: none
+  z-index: 101
+  overflow: hidden
+  +media-breakpoint-down(lg)
+    display: flex
+  &__menu
+    width: 27px
+    height: 3px
+    background: $textcolor
+    transition: $trs
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      right: 0
+      height: 3px
+      background: $textcolor
+      transition: $trs
+    &::before
+      transform: translateY(-10px)
+      width: 35px
+    &::after
+      transform: translateY(10px)
+      width: 15px
+  &.hamburger__active
+    .hamburger__menu
+      transform: translateX(-40px)
+      background-color: transparent
+      &::before
+        transform: rotate(45deg) translate(30px, -30px)
+      &::after
+        transform: rotate(-45deg) translate(30px, 30px)
+        width: 35px
+  
