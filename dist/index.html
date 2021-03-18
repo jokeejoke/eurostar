@@ -5,10 +5,10 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>OptimizedHTML 5</title>
+	<title>Eurostar - международное концертное агенство</title>
 	<meta name="description" content="Startup HTML template OptimizedHTML 5">
 	<meta name="viewport" content="width=device-width">
-	<link rel="icon" href="images/favicon.png">
+	<link rel="icon" href="images/favicon.ico">
 	<meta property="og:image" content="images/dist/preview.jpg">
 	<link rel="stylesheet" href="css/main.min.css">
 
@@ -16,13 +16,166 @@
 
 <body>
 
-	<div class="container" style="max-width: 700px; margin: auto">
+	<!-- Header -->
+	<header class="header">
+		<div class="header-top">
+			<div class="container d-flex align-items-start align-items-lg-center justify-content-between">
+				<div class="site-information">
+					<a href="#" class="logotype">
+						<picture>
+							<source srcset="/images/dist/logotype.webp" type="image/webp" media="(min-width: 992px)">
+							<source srcset="/images/dist/logotype-mobile.webp" type="image/webp" media="(max-width: 992px)">
+							<source srcset="/images/dist/logotype-mobile.png" type="image/png" media="(max-width: 992px)">
+							<img src="/images/dist/logotype.png">
+						</picture>
+					</a>
+					<div class="site-description">
+						<picture>
+							<source srcset="/images/dist/description.webp" type="image/webp">
+							<img src="/images/dist/description.png">
+						</picture>
+					</div>
+				</div>
+				<div class="site-phones">
+					<div class="phone-item whatsapp">
+						<div class="phone-item__icon">
+							<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0.751831 14.6291L1.70984 11.2308C1.09378 10.1856 0.769426 8.99628 0.769426 7.77455C0.769426 4.0128 3.83369 0.952393 7.60018 0.952393C11.3667 0.952393 14.4309 4.0128 14.4309 7.77455C14.4309 11.5363 11.3667 14.5967 7.60018 14.5967C6.42657 14.5967 5.27737 14.2967 4.26074 13.727L0.751831 14.6291ZM4.44013 12.4858L4.64921 12.6133C5.53559 13.1538 6.55604 13.4394 7.60018 13.4394C10.7277 13.4394 13.2722 10.8982 13.2722 7.77455C13.2722 4.65092 10.7277 2.10966 7.60018 2.10966C4.47262 2.10966 1.92815 4.65092 1.92815 7.77455C1.92815 8.86294 2.23787 9.91986 2.82376 10.8311L2.96456 11.05L2.41288 13.007L4.44013 12.4858Z" fill="#141415"/>
+								<path d="M5.68119 4.59915L5.23796 4.57502C5.09874 4.56743 4.96218 4.6139 4.85695 4.70519C4.64208 4.89155 4.29849 5.25185 4.19296 5.72136C4.03559 6.42142 4.27879 7.27865 4.90824 8.13588C5.53768 8.99311 6.7107 10.3647 8.78494 10.9505C9.45335 11.1392 9.97915 11.012 10.3848 10.7528C10.7061 10.5475 10.9276 10.2181 11.0075 9.84559L11.0782 9.51547C11.1007 9.41054 11.0474 9.30408 10.9498 9.25916L9.4518 8.56956C9.35456 8.52481 9.23924 8.5531 9.17384 8.63775L8.58576 9.39914C8.54135 9.45666 8.4653 9.47947 8.39664 9.45538C7.99392 9.31402 6.64491 8.74975 5.9047 7.32571C5.8726 7.26395 5.88058 7.18898 5.92611 7.1363L6.48813 6.48695C6.54556 6.42064 6.56006 6.32742 6.52556 6.24684L5.87985 4.73807C5.84547 4.65774 5.76844 4.60391 5.68119 4.59915Z" fill="#141415"/>
+							</svg>																
+						</div>
+					</div>
+					<div class="phone-item">
+						<div class="phone-item__icon">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M11.1734 10.0444L11.1736 10.0442C11.348 9.86901 11.3474 9.5857 11.1721 9.41137L9.18835 7.42406L9.18695 7.42266C9.01183 7.24828 8.72848 7.2489 8.5541 7.42406L7.43009 8.56571C7.10264 8.89092 6.58947 8.93544 6.21094 8.67141C5.55584 8.21332 4.9427 7.69804 4.37869 7.13159C3.87282 6.6275 3.40741 6.08438 2.98685 5.5072C2.70991 5.12834 2.75186 4.60393 3.0855 4.27393L4.24829 3.11114L4.24969 3.10974C4.42407 2.93462 4.42345 2.65127 4.24829 2.47689L2.26804 0.496648L2.26664 0.495244C2.09152 0.320867 1.80817 0.321487 1.63379 0.496648L1.00661 1.12383C0.245468 1.87254 -0.0273488 2.98698 0.301873 4.0026C0.58906 4.86713 0.99459 5.68769 1.50694 6.44094C1.97536 7.14096 2.51241 7.79255 3.11019 8.38596C3.75988 9.03962 4.47952 9.61977 5.25606 10.1161C6.0919 10.665 7.01023 11.0766 7.97626 11.3352C8.93511 11.5641 9.94391 11.2755 10.6366 10.5741L11.1709 10.0433C11.1714 10.0429 11.1722 10.0432 11.1722 10.0439C11.1722 10.0445 11.1729 10.0448 11.1734 10.0444Z" fill="#141415"/>
+							</svg>					
+						</div>
+						<a href="tel:+77059121212">+7 (705) 912-12-12</a>
+					</div>
+					<div class="phone-item">
+						<div class="phone-item__icon">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M11.1734 10.0444L11.1736 10.0442C11.348 9.86901 11.3474 9.5857 11.1721 9.41137L9.18835 7.42406L9.18695 7.42266C9.01183 7.24828 8.72848 7.2489 8.5541 7.42406L7.43009 8.56571C7.10264 8.89092 6.58947 8.93544 6.21094 8.67141C5.55584 8.21332 4.9427 7.69804 4.37869 7.13159C3.87282 6.6275 3.40741 6.08438 2.98685 5.5072C2.70991 5.12834 2.75186 4.60393 3.0855 4.27393L4.24829 3.11114L4.24969 3.10974C4.42407 2.93462 4.42345 2.65127 4.24829 2.47689L2.26804 0.496648L2.26664 0.495244C2.09152 0.320867 1.80817 0.321487 1.63379 0.496648L1.00661 1.12383C0.245468 1.87254 -0.0273488 2.98698 0.301873 4.0026C0.58906 4.86713 0.99459 5.68769 1.50694 6.44094C1.97536 7.14096 2.51241 7.79255 3.11019 8.38596C3.75988 9.03962 4.47952 9.61977 5.25606 10.1161C6.0919 10.665 7.01023 11.0766 7.97626 11.3352C8.93511 11.5641 9.94391 11.2755 10.6366 10.5741L11.1709 10.0433C11.1714 10.0429 11.1722 10.0432 11.1722 10.0439C11.1722 10.0445 11.1729 10.0448 11.1734 10.0444Z" fill="#141415"/>
+							</svg>					
+						</div>
+						<a href="tel:+80000000000">+8 000 000-00-00</a>
+					</div>
+				</div>
+				<div class="lang-switcher">
+					<div class="lang-switcher__links">
+						<a href="#" class="active">RU</a>/<a href="#">EN</a>
+					</div>
+					<div class="lang-switcher__img">
+						<picture>
+							<source srcset="/images/dist/russia.webp" type="image/webp">
+							<img src="/images/dist/russia.png">
+						</picture>
+					</div>
+				</div>
+				<div class="hamburger">
+					<div class="hamburger__menu"></div>
+				</div>
+			</div>
+		</div>
+		<div class="header-bottom">
+			<div class="container pos-r">
+				<nav class="navbar">
+					<a href="#" class="navbar-link">Главная</a>
+					<a href="#" class="navbar-link">
+						<svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M11.9312 0H4.43382C4.01975 0 3.68408 0.32545 3.68408 0.726907C3.68408 1.12836 4.01975 1.45381 4.43382 1.45381H11.9312C12.3453 1.45381 12.6809 1.12836 12.6809 0.726907C12.6809 0.32545 12.3453 0 11.9312 0Z" />
+							<path d="M1.96962 0.727752C1.96877 0.535281 1.88923 0.350987 1.74844 0.215283C1.45602 -0.0665526 0.983735 -0.0665526 0.691314 0.215283C0.550505 0.350987 0.470962 0.535281 0.470142 0.727752C0.464542 0.774842 0.464542 0.822409 0.470142 0.869499C0.478623 0.916862 0.492447 0.963179 0.511378 1.00761C0.531503 1.05066 0.555331 1.092 0.582603 1.13119C0.609523 1.17194 0.640942 1.20971 0.67632 1.24386C0.710433 1.27679 0.74813 1.30605 0.78878 1.33109C0.828259 1.35896 0.871064 1.38215 0.916236 1.40014C0.965929 1.42513 1.0189 1.44348 1.07368 1.45466C1.12225 1.45993 1.17131 1.45993 1.21988 1.45466C1.41786 1.45482 1.60787 1.37904 1.74844 1.24386C1.78382 1.20971 1.81524 1.17194 1.84216 1.13119C1.86943 1.092 1.89326 1.05066 1.91339 1.00761C1.93731 0.963725 1.95617 0.917407 1.96962 0.869499C1.97522 0.822409 1.97522 0.774842 1.96962 0.727752Z" />
+							<path d="M1.96993 4.99826C1.97551 4.95117 1.97551 4.9036 1.96993 4.85651C1.95698 4.8096 1.93809 4.76445 1.9137 4.72204C1.8944 4.67744 1.87052 4.63483 1.84248 4.59483C1.81649 4.55453 1.78496 4.51784 1.74876 4.48579C1.45634 4.20396 0.984052 4.20396 0.691631 4.48579C0.550821 4.6215 0.471279 4.80579 0.470459 4.99826C0.471912 5.09405 0.49096 5.1888 0.526689 5.27812C0.54548 5.32112 0.568065 5.36246 0.594166 5.40169C0.622679 5.4412 0.655339 5.47775 0.691631 5.51073C0.72476 5.54576 0.762575 5.57633 0.804092 5.60159C0.84357 5.62949 0.886352 5.65268 0.931547 5.67065C0.977258 5.6893 1.02508 5.70272 1.074 5.71063C1.12196 5.72106 1.17104 5.72594 1.2202 5.72517C1.26876 5.7306 1.31783 5.7306 1.36639 5.72517C1.4141 5.71724 1.46067 5.70381 1.5051 5.68519C1.55151 5.66733 1.59556 5.64414 1.6363 5.61613C1.67782 5.59087 1.71563 5.5603 1.74876 5.52527C1.78489 5.49315 1.81642 5.45648 1.84248 5.41623C1.8713 5.37798 1.89522 5.3365 1.9137 5.29266C1.93931 5.24441 1.95822 5.19307 1.96993 5.14001C1.9757 5.09292 1.9757 5.04535 1.96993 4.99826Z" />
+							<path d="M1.96998 9.26901C1.97553 9.22192 1.97553 9.17436 1.96998 9.12727C1.95702 9.0792 1.93814 9.03284 1.91375 8.98915C1.89362 8.94611 1.8698 8.90476 1.84252 8.86558C1.81647 8.82533 1.78493 8.78866 1.74881 8.75654C1.45639 8.47471 0.984098 8.47471 0.691677 8.75654C0.655549 8.78866 0.624014 8.82533 0.59796 8.86558C0.570689 8.90476 0.546861 8.94611 0.526735 8.98915C0.507289 9.0334 0.493442 9.07979 0.4855 9.12727C0.474933 9.17381 0.469919 9.22135 0.470505 9.26901C0.471348 9.46148 0.550891 9.64578 0.691677 9.78148C0.724806 9.81651 0.762621 9.84708 0.804138 9.87234C0.843616 9.90024 0.886398 9.92343 0.931593 9.9414C0.977304 9.96005 1.02512 9.97348 1.07404 9.98138C1.122 9.99181 1.17109 9.99669 1.22024 9.99592C1.26881 10.0013 1.31787 10.0013 1.36644 9.99592C1.41414 9.98799 1.46072 9.97457 1.50514 9.95594C1.55156 9.93808 1.5956 9.91489 1.63635 9.88688C1.67786 9.86162 1.71568 9.83105 1.74881 9.79602C1.78493 9.7639 1.81647 9.72724 1.84252 9.68698C1.87137 9.64875 1.89529 9.60725 1.91375 9.56341C1.93933 9.51514 1.95824 9.46382 1.96998 9.41076C1.97574 9.36367 1.97574 9.3161 1.96998 9.26901Z" />
+							<path d="M12.6809 4.27148H4.43382C4.01975 4.27148 3.68408 4.59693 3.68408 4.99839C3.68408 5.39985 4.01975 5.7253 4.43382 5.7253H12.6809C13.095 5.7253 13.4307 5.39985 13.4307 4.99839C13.4307 4.59693 13.095 4.27148 12.6809 4.27148Z" />
+							<path d="M9.30711 8.54211H4.43382C4.01975 8.54211 3.68408 8.86756 3.68408 9.26902C3.68408 9.67048 4.01975 9.99593 4.43382 9.99593H9.30711C9.72118 9.99593 10.0568 9.67048 10.0568 9.26902C10.0568 8.86756 9.72118 8.54211 9.30711 8.54211Z"/>
+						</svg>
+						Каталог артистов						
+					</a>
+					<a href="#" class="navbar-link">Event</a>
+					<a href="#" class="navbar-link">Билеты на концерты</a>
+					<a href="#" class="navbar-link">О нас</a>
+					<a href="#" class="navbar-link">Наши проекты</a>
+					<a href="#" class="navbar-link">Как мы работаем</a>
+					<a href="#" class="navbar-link">Контакты</a>
+				</nav>
+				<div class="lang-switcher">
+					<div class="lang-switcher__links">
+						<a href="#" class="active">RU</a>/<a href="#">EN</a>
+					</div>
+					<div class="lang-switcher__img">
+						<picture>
+							<source srcset="/images/dist/russia.webp" type="image/webp">
+							<img src="/images/dist/russia.png">
+						</picture>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Header End -->
 
-		<img src="images/dist/preview.jpg" alt="Start HTML5 Template" style="width: 100%"><br><br>
-		<h2>Welcome to startup HTML template OptimizedHTML 5!</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit nulla alias expedita a qui, pariatur doloremque ipsa fugit laboriosam odio iure recusandae laborum delectus praesentium magni reiciendis voluptatem. Sed.</p>
-	
+<section class="banner">
+	<div class="banner-slider swiper-container">
+		<div class="banner-slider__wrapper swiper-wrapper">
+			<a href="#" class="banner-slider__item swiper-slide">
+				<picture>
+					<source srcset="/images/dist/banner.webp" type="image/webp">
+					<img src="/images/dist/banner.png">
+				</picture>
+			</a>
+			<a href="#" class="banner-slider__item swiper-slide">
+				<picture>
+					<source srcset="/images/dist/banner.webp" type="image/webp">
+					<img src="/images/dist/banner.png">
+				</picture>
+			</a>
+			<a href="#" class="banner-slider__item swiper-slide">
+				<picture>
+					<source srcset="/images/dist/banner.webp" type="image/webp">
+					<img src="/images/dist/banner.png">
+				</picture>
+			</a>
+			<a href="#" class="banner-slider__item swiper-slide">
+				<picture>
+					<source srcset="/images/dist/banner.webp" type="image/webp">
+					<img src="/images/dist/banner.png">
+				</picture>
+			</a>
+			<a href="#" class="banner-slider__item swiper-slide">
+				<picture>
+					<source srcset="/images/dist/banner.webp" type="image/webp">
+					<img src="/images/dist/banner.png">
+				</picture>
+			</a>
+			<a href="#" class="banner-slider__item swiper-slide">
+				<picture>
+					<source srcset="/images/dist/banner.webp" type="image/webp">
+					<img src="/images/dist/banner.png">
+				</picture>
+			</a>
+		</div>
+		<div class="container pos-r banner-slider__navigation">
+			<div class="banner-slider__next swiper-button-next">
+				<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1.78308 1.95117L7.39283 7.56093L1.78308 13.1707" stroke="#171719" stroke-width="3" stroke-linecap="round"/>
+				</svg>				
+			</div>
+			<div class="banner-slider__prev swiper-button-prev">
+				<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M8.14886 13.0488L2.53911 7.43907L8.14887 1.82931" stroke="#171719" stroke-width="3" stroke-linecap="round"/>
+				</svg>				
+			</div>
+		</div>
+		<div class="banner-slider__pagination swiper-pagination"></div>
 	</div>
+</section>
+
+<section class="ex"></section>
+<section class="ex"></section>
+<section class="ex"></section>
+<section class="ex"></section>
 
 	<script src="js/app.min.js"></script>
 
