@@ -32,12 +32,18 @@
       visibility: hidden
       opacity: 0
       transition: $trs
+      padding-bottom: 100px
+      -ms-overflow-style: none
+      scrollbar-width: none
     +media-breakpoint-down(md)
       top: 100px
+    &::-webkit-scrollbar
+      display: none
     &.active
       left: 0
       visibility: visible
       opacity: 1
+      overflow-y: scroll
     .lang-switcher
       display: none
       +media-breakpoint-down(lg)
@@ -86,6 +92,7 @@
         background: #87ce02
     .phone-item__icon
       background: #4FA647
+      line-height: 23px
   &:hover
     .phone-item__icon
       background: $textcolor
