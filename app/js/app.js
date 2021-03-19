@@ -1,8 +1,6 @@
 import $ from 'jquery'; window.jQuery = $; window.$ = $ // import module example (npm i -D jquery)
 import Swiper, {Autoplay, Pagination, Navigation} from 'swiper';
-
-// Vendor Plugins
-require('~/app/js/vendor/select2-develop/dist/js/select2.min.js')
+require('~/app/js/vendor/select2-develop/dist/js/select2.min.js');
 
 
 document.addEventListener('DOMContentLoaded', () => {
