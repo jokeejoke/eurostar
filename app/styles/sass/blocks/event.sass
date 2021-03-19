@@ -1,0 +1,204 @@
+.event
+  position: relative
+  padding-top: 47px
+  padding-bottom: 60px
+  background: #070707
+  +media-breakpoint-down(sm)
+    padding: 46px 0 95px
+  &-columns
+    position: relative
+    margin-top: 13px
+    display: flex
+    +media-breakpoint-down(lg)
+      flex-wrap: wrap
+    +media-breakpoint-down(sm)
+      margin-top: 0
+  &-column
+    position: relative
+    margin-right: 10px
+    &:last-child
+      margin-right: 0
+    &:first-child
+      flex: 0 0 214px
+      +media-breakpoint-down(lg)
+        flex: 0 0 32%
+      +media-breakpoint-down(md)
+        flex: 0 0 100%
+      .event-item
+        &:first-child
+          border-radius: 10px 0px 0px 0px
+          background-image: url(../images/dist/event-images/champagne.png)
+          background-size: 199px 141px
+          +media-breakpoint-down(md)
+            border-radius: 10px
+          +media-breakpoint-down(md)
+            background-size: contain
+        &:last-child
+          border-radius: 0px 0px 0px 10px
+          +media-breakpoint-down(md)
+            border-radius: 10px
+            margin-bottom: 10px
+    &:nth-child(2)
+      flex: 0 0 214px
+      +media-breakpoint-down(lg)
+        flex: 0 0 32%
+      +media-breakpoint-down(md)
+        flex: 0 0 100%
+      .event-item
+        &:first-child
+          background-image: url(../images/dist/event-images/box.png)
+          background-size: 59px 52px
+          background-position: center right 8px
+          +media-breakpoint-down(md)
+            background-size: contain
+        &:nth-child(2)
+          background-image: url(../images/dist/event-images/proj.png)
+          background-size: 56px 66px
+          background-position: center right
+          +media-breakpoint-down(md)
+            background-size: contain
+    &:nth-child(3)
+      flex: 0 0 173px
+      +media-breakpoint-down(lg)
+        flex: 0 0 33.33%
+        margin-right: 0
+      +media-breakpoint-down(md)
+        flex: 0 0 100%
+      .event-item
+        &:first-child
+          background-image: url(../images/dist/event-images/lenty.png)
+          background-size: 86px 74px
+          +media-breakpoint-down(md)
+            background-size: contain
+          +media-breakpoint-down(md)
+            margin-top: 10px
+        &:nth-child(2)
+          background-image: url(../images/dist/event-images/feir.png)
+          background-size: 86px 79px
+          +media-breakpoint-down(md)
+            background-size: contain
+    &:nth-child(4)
+      flex: 0 0 229px
+      +media-breakpoint-down(lg)
+        flex: 0 0 50%
+        margin-top: 10px
+      +media-breakpoint-down(md)
+        flex: 0 0 100%
+      .event-item
+        &:first-child
+          background-image: url(../images/dist/event-images/kolca.png)
+          background-size: 81px 47px
+          background-position: center right 10px
+          +media-breakpoint-down(md)
+            background-size: contain
+        &:nth-child(2)
+          background-image: url(../images/dist/event-images/shary.png)
+          background-size: 91px 87px
+          +media-breakpoint-down(md)
+            background-size: contain
+        &:nth-child(3)
+          background-image: url(../images/dist/event-images/jet.png)
+          background-size: 131px 49px
+          background-position: right 10px bottom 9px
+          +media-breakpoint-down(md)
+            background-size: contain
+            background-position: right bottom
+    &:last-child
+      flex: 0 0 241px
+      +media-breakpoint-down(lg)
+        flex: 0 0 48.48%
+        margin-top: 10px
+        margin-right: 0
+      +media-breakpoint-down(md)
+        flex: 0 0 100%
+      .event-item
+        &:first-child
+          border-radius: 0px 10px 0px 0px
+          +media-breakpoint-down(md)
+            border-radius: 10px
+        &:last-child
+          border-radius: 0px 0px 10px 0px
+          background-image: url(../images/dist/event-images/yakhta.png)
+          background-size: 91px 87px
+          background-position: bottom 10px right 5px
+          +media-breakpoint-down(md)
+            border-radius: 10px
+            background-size: contain
+            background-position: bottom right
+  &-item
+    display: block
+    position: relative
+    overflow: hidden
+    height: 105px
+    width: 100%
+    background: #1C1C20
+    margin-bottom: 10px
+    border: 1px solid rgba(244, 198, 131, 0.43)
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: right bottom
+    transition: $trs
+    +media-breakpoint-down(md)
+      border-radius: 10px
+      padding: 10px 16px
+      height: auto
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: rgba(244, 198, 131, 0.8)
+      z-index: 1
+      transition: $trs
+      opacity: 0
+    &::before
+      content: ""
+      position: absolute
+      bottom: 7px
+      right: 8px
+      width: 33px
+      height: 33px
+      border-radius: 50%
+      background: $titlecolor
+      background-image: url(../images/dist/event-arrow.svg)
+      background-repeat: no-repeat
+      background-position: center
+      opacity: 0
+      transform: scale(0)
+      transition: $trs
+      z-index: 2
+    &:hover
+      border: none
+      &::after
+        opacity: 1
+      &::before
+        opacity: 1
+        transform: scale(1)
+      .event-item__title
+        color: $titlecolor
+    &:last-child
+      margin-bottom: 0
+    &__title
+      position: absolute
+      z-index: 3
+      top: 10px
+      left: 16px
+      font-weight: 500
+      font-size: 18px
+      line-height: 26px
+      color: rgba(255, 255, 255, 0.9)
+      +media-breakpoint-down(md)
+        position: relative
+        top: unset
+        left: unset
+    &.large
+      height: 201px
+      +media-breakpoint-down(md)
+        height: auto
+    &.small
+      height: 86px
+      +media-breakpoint-down(md)
+        height: auto
+  

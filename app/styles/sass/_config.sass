@@ -84,3 +84,27 @@ body
 		background: $textcolor
 		text-decoration: none
 		color: #000
+
+.section
+	position: relative
+	overflow: hidden
+	&-title
+		position: relative
+		font-weight: 500
+		color: $accent
+		font-size: 30px
+		line-height: 30px
+		margin: 0
+		+media-breakpoint-down(sm)
+			font-size: 24px
+	&-description
+		margin: 0
+		text-transform: uppercase
+		color: $accent
+		font-size: 16px
+		line-height: 40px
+		margin-left: 10px
+		+media-breakpoint-down(sm)
+			margin-left: 0
+			line-height: 26px
+			margin-bottom: 16px
