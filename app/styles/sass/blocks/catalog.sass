@@ -1,0 +1,356 @@
+.catalog
+  position: relative
+  padding: 37px 0 73px
+  +media-breakpoint-down(sm)
+    padding: 22px 0 46px
+  &__title
+    color: $accent
+    font-weight: 500
+    font-size: 20px
+    text-transform: uppercase
+    line-height: 18px
+    display: flex
+    align-items: center
+    letter-spacing: 0.03em
+    white-space: nowrap
+    margin-bottom: 19px
+    +media-breakpoint-down(lg)
+      margin-bottom: 14px
+    svg
+      fill: $accent
+      margin-right: 9px
+
+.tab-wrapper
+  position: relative
+  border: 1px solid rgba(244, 198, 131, 0.46)
+  padding: 15px 14px
+  min-height: 657px
+  border-radius: 10px
+  +media-breakpoint-down(sm)
+    min-height: 552px
+    padding: 22px 14px 17px
+.tabs
+  display: flex
+  position: relative
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    border: 1px solid #F4C683
+    border-radius: 7px
+  .tab
+    flex: 1
+    color: rgba(255, 255, 255, 0.79)
+    font-size: 14px
+    font-weight: 500
+    line-height: 16px
+    padding: 8px 0
+    text-align: center
+    cursor: pointer
+    z-index: 11
+    position: relative
+    transition: $trs
+    +media-breakpoint-down(sm)
+      font-size: 14px
+      padding: 7px 0
+    &:hover
+      color: $accent
+    &.active
+      background: $accent
+      color: $titlecolor
+      font-weight: 600
+      border-radius: 7px
+
+.tab_item
+  position: relative
+  padding-top: 22px
+  padding-bottom: 120px
+  +media-breakpoint-down(sm)
+    padding-bottom: 24px
+
+.artists-category
+  position: relative
+  a
+    display: block
+    text-transform: uppercase
+    color: $accent
+    font-weight: 600
+    font-size: 14px
+    line-height: 17px
+    margin-bottom: 20px
+    padding-left: 26px
+    position: relative
+    transition: $trs
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 16px
+      height: 16px
+      border: 1px solid #5A5A5A
+      border-radius: 50%
+      transition: $trs
+    &::before
+      content: ''
+      position: absolute
+      top: 48%
+      left: 3.5px
+      transform: translateY(-50%)
+      width: 10px
+      height: 10px
+      background: $accent
+      border-radius: 50%
+      display: none
+    &:last-child
+      margin-bottom: 0
+    &:hover
+      text-decoration: none
+      &::after
+        border-color: $accent
+    &.active
+      color: $textcolor
+      &::before
+        display: block
+
+.catalog-filter
+  position: relative
+  display: flex
+  +media-breakpoint-down(lg)
+    margin-bottom: 13px
+  +media-breakpoint-down(sm)
+    flex-direction: column
+    margin-bottom: 12px
+  &__search
+    position: relative
+    width: 47.4%
+    +media-breakpoint-down(lg)
+      width: 70%
+    +media-breakpoint-down(sm)
+      width: 100%
+    &::after
+      content: ""
+      position: absolute
+      top: 10px
+      right: 9px
+      display: block
+      width: 15px
+      height: 15px
+      background-image: url(../images/dist/search.svg)
+      background-size: contain
+      background-repeat: no-repeat
+    input
+      width: 100%
+      height: 34px
+      padding: 9px 30px 9px 13px
+      border-radius: 5px
+      border: 1px solid rgba(192, 192, 192, 0.2)
+      background: #171719
+      color: #BBBBBB
+      font-size: 12px
+      line-height: 16px
+      transition: $trs
+      &:hover
+        border-color: $accent
+        cursor: pointer
+  &__sort
+    width: 245px
+    margin: 0 10px
+    +media-breakpoint-down(lg)
+      width: 30%
+      margin: 0 0 0 10px
+    +media-breakpoint-down(sm)
+      margin: 10px 0 0
+      width: 100%
+    .select2-container
+      width: 100% !important
+      outline: none
+    .select2-container--default .select2-selection--single
+      background: #171719
+      height: 34px
+      border: 1px solid rgba(192, 192, 192, 0.2)
+      outline: none
+    .select2-container--default .select2-selection--single .select2-selection__rendered
+      color: #BBBBBB
+      font-size: 12px
+      line-height: 34px
+      height: 34px
+      padding-left: 11px
+    .select2-container--default .select2-selection--single .select2-selection__arrow
+      height: 34px
+      &::after
+        content: ""
+        position: absolute
+        top: 14px
+        right: 9px
+        width: 10px
+        height: 5px
+        background-image: url(../images/dist/arrow-down.svg)
+        background: no-repeat
+        background-size: contain
+    .select2-container--default .select2-selection--single .select2-selection__arrow b
+      display: none
+  .theme-btn
+    width: 169px
+    +media-breakpoint-down(lg)
+      display: none
+
+.select2-results
+  background: #353539
+  border-top: 1px solid rgba(255, 255, 255, 0.52)
+.select2-dropdown
+  border: none
+.select2-results__option
+  padding: 7px 13px
+  color: rgba(255, 255, 255, 0.75)
+.select2-container--default .select2-results__option--selected,
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable
+  background: $accent
+  color: #000
+  +media-breakpoint-down(sm)
+    font-size: 14px
+
+.catalog-preloader
+  position: relative
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+
+// Preloader Styles
+.lds-ring
+  display: inline-block
+  position: relative
+  width: 160px
+  height: 160px
+  div
+    display: block
+    box-sizing: border-box
+    position: absolute
+    width: 64px
+    height: 64px
+    margin: 8px
+    border: 8px solid $accent
+    border-radius: 50%
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+    border-color: $accent transparent transparent transparent
+    &:nth-child(1)
+      animation-delay: -0.45s
+    &:nth-child(2)
+      animation-delay: -0.3s
+    &:nth-child(3)
+      animation-delay: -0.15s
+
+@keyframes lds-ring
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+.artists-list
+  position: relative
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  margin-top: 15px
+  max-height: 565px
+  +media-breakpoint-down(sm)
+    display: none
+  a
+    color: rgba(255, 255, 255, 0.75)
+    margin: 0
+    font-size: 15px
+    line-height: 32px
+    text-transform: capitalize
+    margin-bottom: 1px
+    display: block
+    width: 231px
+    white-space: nowrap
+    margin-right: 65px
+    transition: $trs
+    &:hover
+      cursor: pointer
+      color: $accent
+      text-decoration: none
+  .third
+    +media-breakpoint-down(lg)
+      display: none
+  .sec
+    +media-breakpoint-down(md)
+      display: none
+
+.pagination-wrapper
+  position: relative
+  margin-top: 48px
+  +media-breakpoint-down(sm)
+    margin-top: 17px
+    display: none
+.pagination
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: 0
+  padding: 0
+  list-style-type: none
+  +media-breakpoint-down(sm)
+    justify-content: space-between
+  .page-item
+    margin: 0 8px
+    width: 32px
+    height: 32px
+    line-height: 32px
+    text-align: center
+    border-radius: 50%
+    transition: $trs
+    +media-breakpoint-down(sm)
+      margin: 0
+    &:hover
+      background: rgba(255, 255, 255, 0.09)
+      .page-link
+        color: $textcolor
+        text-decoration: none
+    &.active
+      .page-link
+        color: $accent
+    &.disc
+      width: 34px
+      height: 34px
+      background: $accent
+      border-radius: 50%
+      line-height: 34px
+      text-align: center
+      &:hover
+        background: $textcolor
+  .page-link
+    display: inline-block
+    width: 100%
+    height: 100%
+    line-height: 22px
+    color: rgba(255, 255, 255, 0.61)
+
+.catalog-mobile-btn
+  display: none
+  +media-breakpoint-down(sm)
+    display: block
+    margin-top: 16px
+
+.mobile-catalog
+  .artists-list
+    display: block
+    margin-top: 11px
+  .pagination-wrapper
+    display: block
+.back-to-catalog
+  border: 1px solid #F4C683
+  border-radius: 5px
+  padding: 7px 0
+  text-align: center
+  font-size: 14px
+  line-height: 16px
+  width: 100%
+  display: block
+  color: $textcolor

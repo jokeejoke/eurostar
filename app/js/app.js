@@ -1,8 +1,24 @@
-//import $ from 'jquery'; window.jQuery = $; window.$ = $ // import module example (npm i -D jquery)
+import $ from 'jquery'; window.jQuery = $; window.$ = $ // import module example (npm i -D jquery)
 import Swiper, {Autoplay, Pagination, Navigation} from 'swiper';
+
+// Vendor Plugins
+require('~/app/js/vendor/select2-develop/dist/js/select2.min.js')
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
+	/** JQUERY CODE */
+	$(".tab_item").not(":first").hide();
+	$(".tab-wrapper .tab").click(function() {
+		$(".tab-wrapper .tab").removeClass("active").eq($(this).index()).addClass("active");
+		$(".tab_item").hide().eq($(this).index()).fadeIn()
+	}).eq(0).addClass("active");
+
+	$('.filter-sort').select2({
+    dropdownAutoWidth: true,
+		minimumResultsForSearch: Infinity
+	});
+	/** END JQUERY CODE */
 
 	Swiper.use([Autoplay, Pagination, Navigation]);
 
@@ -56,6 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	/** END Banner Slider */
 
+
 	hamburgerMenu()
+
+
+
 
 })

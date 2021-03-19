@@ -146,7 +146,7 @@
   padding: 22px 0 23px
   +media-breakpoint-down(lg)
     flex-direction: column
-  a
+  &-link
     color: rgba(255, 255, 255, 0.75)
     text-transform: uppercase
     font-size: 14px
@@ -157,6 +157,8 @@
     transition: $trs
     +media-breakpoint-down(lg)
       padding: 16px 0
+    &.active
+      color: $accent
     &:hover
       color: $accent
       text-decoration: none

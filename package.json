@@ -31,11 +31,13 @@
 		"gulp-webp": "^4.0.1",
 		"gulp-webp-css": "^1.1.0",
 		"gulp-webpcss": "^1.1.1",
-		"jquery": "^3.5.1",
+		"jquery": "^3.6.0",
 		"magnific-popup": "^1.1.0",
 		"webpack-stream": "^6.1.1"
 	},
 	"dependencies": {
-		"swiper": "^6.5.0"
+		"select2": "^4.1.0-rc.0",
+		"swiper": "^6.5.0",
+		"vue": "^2.6.12"
 	}
 }
