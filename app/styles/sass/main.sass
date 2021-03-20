@@ -1,2 +1,257 @@
 @import config
 @import "blocks/**/*"
+
+.pos-r
+	position: relative
+
+.theme-btn
+	background: $accent
+	display: inline-block
+	color: #000
+	font-size: 14px
+	line-height: 17px
+	border-radius: 5px
+	text-align: center
+	padding: 9px 0
+	width: 100%
+	transition: $trs
+	font-weight: 500
+	&:hover
+		background: $textcolor
+		text-decoration: none
+		color: #000
+
+.theme-btn-wb
+  position: relative
+  line-height: 19px
+  padding: 18px 50px
+  letter-spacing: 0.05em
+  border: 1px solid $accent
+  border-radius: 5px
+  background: transparent
+  color: $accent
+  font-weight: 500
+  transition: $trs
+  +media-breakpoint-down(md)
+    padding: 18px 35px
+  &:hover
+    background: $accent
+    color: $titlecolor
+  &:active
+    background: #C6A26D
+
+
+.section
+	position: relative
+	overflow: hidden
+	&.black
+		background: #070707
+	&-title
+		position: relative
+		font-weight: 500
+		color: $accent
+		font-size: 30px
+		line-height: 30px
+		margin: 0 0 27px
+		letter-spacing: 0.05em
+		text-transform: uppercase
+		+media-breakpoint-down(sm)
+			font-size: 24px
+			width: fit-content
+			margin: 0 0 19px
+		&::after
+			content: ""
+			position: absolute
+			top: 47%
+			right: -100%
+			width: 106px
+			height: 3px
+			background-image: url(../images/dist/vector.svg)
+			+media-breakpoint-down(sm)
+				right: -115%
+	&-description
+		margin: 0
+		text-transform: uppercase
+		color: $accent
+		font-size: 16px
+		line-height: 30px
+		margin-left: 9px
+		margin-top: 1px
+		letter-spacing: 0.05em
+		+media-breakpoint-down(sm)
+			margin-left: 0
+			line-height: 26px
+			margin-bottom: 16px
+	&-btn
+		position: absolute
+		top: -40px
+		right: 12px
+		color: $accent
+		text-transform: uppercase
+		letter-spacing: 0.02em
+		line-height: 20px
+		transition: $trs
+		+media-breakpoint-down(md)
+			top: unset
+			bottom: -52px
+			right: unset
+			left: 15px
+		+media-breakpoint-down(sm)
+			font-size: 14px
+			line-height: 17px
+		svg
+			fill: $accent
+			margin-left: 15px
+			transition: $trs
+		&:hover
+			color: $textcolor
+			text-decoration: none
+			svg
+				fill: $textcolor
+
+.form
+  position: relative
+  min-width: 762px
+  border-radius: 10px
+  background: #1A1A1D
+  padding: 41px 41px 34px
+  +media-breakpoint-down(lg)
+    max-width: 100%
+    min-width: 100%
+  +media-breakpoint-down(md)
+    padding: 31px
+  +media-breakpoint-down(sm)
+    padding: 20px
+  .theme-btn-wb
+    +media-breakpoint-down(sm)
+      width: 100%
+  &__title
+    color: $accent
+    font-size: 30px
+    line-height: 30px
+    text-transform: uppercase
+    letter-spacing: 0.05em
+    font-weight: 500
+    margin-bottom: 19px
+    +media-breakpoint-down(sm)
+      font-size: 24px
+      margin-bottom: 12px
+  &__description
+    font-size: 18px
+    line-height: 22px
+    color: rgba(255, 255, 255, 0.9)
+    margin-bottom: 16px
+    +media-breakpoint-down(sm)
+      font-size: 14px
+      line-height: 17px
+      margin-bottom: 14px
+  &-group
+    position: relative
+    margin-bottom: 27px
+    +media-breakpoint-down(sm)
+      margin-bottom: 6px
+    &.flex
+      display: flex
+      width: 100%
+      justify-content: space-between
+      +media-breakpoint-down(sm)
+        flex-wrap: wrap
+  input
+    border: none
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+    background: transparent
+    color: rgba(255, 255, 255, 0.57)
+    font-size: 12px
+    line-height: 15px
+    width: 100%
+    max-width: 213px
+    padding: 11px 0
+    +media-breakpoint-down(lg)
+      max-width: 197px
+    +media-breakpoint-down(sm)
+      max-width: 100%
+      margin-bottom: 16px
+    &[type="file"]
+      display: none !important
+    &[type="checkbox"]
+      display: none
+      &:checked + label
+        &::after
+          opacity: 1
+  textarea
+    width: 100%
+    background: transparent
+    border-radius: 10px
+    border: 1px solid rgba(255, 255, 255, 0.2)
+    padding: 12px 16px
+    font-size: 12px
+    line-height: 15px
+    resize: none
+    min-height: 182px
+    color: rgba(255, 255, 255, 0.57)
+    +media-breakpoint-down(sm)
+      padding: 12px 13px
+  .custom-file-upload
+    cursor: pointer
+    position: absolute
+    bottom: 13px
+    right: 16px
+    line-height: 20px
+    color: rgba(255, 255, 255, 0.61)
+    +media-breakpoint-down(sm)
+      bottom: -47px
+      left: 0
+  .personal
+    max-width: 380px
+    font-weight: 500
+    font-size: 14px
+    line-height: 17px
+    color: rgba(255, 255, 255, 0.9)
+    padding-left: 34px
+    position: relative
+    +media-breakpoint-down(lg)
+      max-width: 340px
+    +media-breakpoint-down(sm)
+      max-width: 100%
+      margin-bottom: 32px
+      margin-top: 67px
+    &:hover
+      cursor: pointer
+      &::before
+        border-color: $accent
+    &::before
+      content: ""
+      width: 16px
+      height: 16px
+      border: 1px solid #5A5A5A
+      position: absolute
+      top: 0
+      left: 0
+      border-radius: 2px
+      transition: $trs
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 16px
+      height: 16px
+      background-image: url(../images/dist/check.svg)
+      background-size: contain
+      border-radius: 2px
+      opacity: 0
+      transition: $trs
+    span
+      display: block
+      line-height: 15px
+      color: rgba(255, 255, 255, 0.47)
+      margin-top: 5px
+      font-size: 12px
+  &-footer
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    margin-top: -7px
+    +media-breakpoint-down(sm)
+      flex-direction: column

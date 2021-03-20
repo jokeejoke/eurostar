@@ -16,6 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownAutoWidth: true,
 		minimumResultsForSearch: Infinity
 	});
+
+	$("#file-upload").on("change", function() {
+		$(".custom-file-upload span").html($("#file-upload").val());
+	})
+
+	
 	/** END JQUERY CODE */
 
 	Swiper.use([Autoplay, Pagination, Navigation]);
@@ -69,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 	/** END Banner Slider */
-
 
 	hamburgerMenu()
 

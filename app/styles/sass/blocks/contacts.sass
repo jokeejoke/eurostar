@@ -1,0 +1,40 @@
+.contacts
+  position: relative
+  padding: 60px 0
+  +media-breakpoint-down(md)
+    padding: 46px 0
+  .form
+    +media-breakpoint-down(md)
+      margin-top: 24px
+  &-logo
+    display: none
+    +media-breakpoint-down(md)
+      display: block
+    +media-breakpoint-down(xs)
+      display: none
+    img
+      max-width: 268px
+      height: auto
+      +media-breakpoint-down(sm)
+        max-width: 220px
+  &-title
+    margin-bottom: 32px !important
+    +media-breakpoint-down(sm)
+      margin-bottom: 42px !important
+    &::after
+      display: none
+  &-list
+    position: relative
+    margin-top: 40px
+    +media-breakpoint-down(lg)
+      margin-top: 0
+    .site-phones
+      flex-direction: column
+      align-items: flex-start
+      .phone-item
+        margin-bottom: 26px
+        margin-right: 0
+        a
+          color: rgba(255, 255, 255, 0.81)
+        &__icon
+          margin-right: 16px
