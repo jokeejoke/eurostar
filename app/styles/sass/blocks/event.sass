@@ -2,9 +2,11 @@
   position: relative
   padding-top: 47px
   padding-bottom: 60px
-  background: #070707
-  +media-breakpoint-down(sm)
+  +media-breakpoint-down(md)
     padding: 46px 0 95px
+  &-title
+    &::after
+      display: none
   &-columns
     position: relative
     margin-top: 13px
@@ -34,7 +36,10 @@
           +media-breakpoint-down(md)
             background-size: contain
         &:last-child
+          background-image: url(../images/dist/event-images/Salyuty_i_Feyerverki.png)
           border-radius: 0px 0px 0px 10px
+          +media-breakpoint-down(lg)
+            border-radius: 0
           +media-breakpoint-down(md)
             border-radius: 10px
             margin-bottom: 10px
@@ -57,6 +62,8 @@
           background-position: center right
           +media-breakpoint-down(md)
             background-size: contain
+        &:nth-child(3)
+          background-image: url(../images/dist/event-images/3D_mapping.png)
     &:nth-child(3)
       flex: 0 0 173px
       +media-breakpoint-down(lg)
@@ -77,6 +84,8 @@
           background-size: 86px 79px
           +media-breakpoint-down(md)
             background-size: contain
+        &:nth-child(3)
+          background-image: url(../images/dist/event-images/Lazernoe_shou.png)
     &:nth-child(4)
       flex: 0 0 229px
       +media-breakpoint-down(lg)
@@ -90,7 +99,8 @@
           background-size: 81px 47px
           background-position: center right 10px
           +media-breakpoint-down(md)
-            background-size: contain
+            background-size: 51px 26px
+            background-position: center right 5px
         &:nth-child(2)
           background-image: url(../images/dist/event-images/shary.png)
           background-size: 91px 87px
@@ -101,8 +111,8 @@
           background-size: 131px 49px
           background-position: right 10px bottom 9px
           +media-breakpoint-down(md)
-            background-size: contain
-            background-position: right bottom
+            background-size: 91px 29px
+            background-position: right center
     &:last-child
       flex: 0 0 241px
       +media-breakpoint-down(lg)
@@ -113,7 +123,10 @@
         flex: 0 0 100%
       .event-item
         &:first-child
+          background-image: url(../images/dist/event-images/Svetovoe_oborudovanie_komp.png)
           border-radius: 0px 10px 0px 0px
+          +media-breakpoint-down(lg)
+            border-radius: 0
           +media-breakpoint-down(md)
             border-radius: 10px
         &:last-child
@@ -153,6 +166,8 @@
       z-index: 1
       transition: $trs
       opacity: 0
+      +media-breakpoint-down(md)
+        border-radius: 10px
     &::before
       content: ""
       position: absolute
@@ -171,6 +186,7 @@
       z-index: 2
     &:hover
       border: none
+      text-decoration: none
       &::after
         opacity: 1
       &::before
@@ -178,6 +194,7 @@
         transform: scale(1)
       .event-item__title
         color: $titlecolor
+        text-decoration: none
     &:last-child
       margin-bottom: 0
     &__title
@@ -185,6 +202,7 @@
       z-index: 3
       top: 10px
       left: 16px
+      max-width: 156px
       font-weight: 500
       font-size: 18px
       line-height: 26px
@@ -193,6 +211,7 @@
         position: relative
         top: unset
         left: unset
+        max-width: 100%
     &.large
       height: 201px
       +media-breakpoint-down(md)
