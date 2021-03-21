@@ -1,0 +1,52 @@
+.footer
+  position: relative
+  .site-phones, .lang-switcher, .hamburger
+    +media-breakpoint-down(lg)
+      display: none
+  &-top
+    padding-top: 19px
+    padding-bottom: 22px
+    border-bottom: 1px solid rgba(244,198,131,.32)
+    background: #070707
+    +media-breakpoint-down(lg)
+      background: #0A0A0B
+      border-bottom: none
+      padding-top: 50px
+      padding-bottom: 10px
+    +media-breakpoint-down(md)
+      padding-top: 46px
+    .site-description
+      +media-breakpoint-down(lg)
+        margin-left: 11px
+        margin-top: 7px
+      +media-breakpoint-down(md)
+        display: none
+  &-bottom
+    background: #121214
+    +media-breakpoint-down(lg)
+      background: #0A0A0B
+  &-copyright
+    padding: 16px 0
+    p
+      margin: 0
+      font-size: 12px
+      line-height: 15px
+      letter-spacing: 0.02em
+      color: rgba(255, 255, 255, 0.35)
+    a
+      display: inline-block
+      font-size: 12px
+      line-height: 15px
+      color: rgba(255, 255, 255, 0.35)
+      letter-spacing: 0.02em
+      text-decoration: underline
+      +media-breakpoint-down(sm)
+        margin-top: 23px
+    &-flex
+      display: flex
+      justify-content: space-between
+      align-items: center
+      +media-breakpoint-down(sm)
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start

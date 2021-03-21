@@ -57,7 +57,7 @@
 	</div>
 </section>
 
-<section class="catalog">
+<section class="catalog" id="catalog">
 	<div class="container">
 		<div class="row">
 			<div class="col-xl-3">
@@ -76,7 +76,7 @@
 			<div class="col-xl-9">
 				<div class="catalog-filter">
 					<div class="catalog-filter__search">
-						<input type="text" placeholder="Поиск по названию" name="name">
+						<input type="text" placeholder="Поиск по названию" name="name" v-model="filter">
 					</div>
 					<div class="catalog-filter__sort">
 						<select name="sort" class="filter-sort">
@@ -198,7 +198,7 @@
 				<nav class="pagination-wrapper">
 					<ul class="pagination">
 						<li class="page-item disc">
-							<a class="page-link" href="#">
+							<a href="#" class="page-link">
 								<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M8.14886 13.0488L2.53911 7.43907L8.14887 1.82931" stroke="#171719" stroke-width="3" stroke-linecap="round"/>
 								</svg>
@@ -209,7 +209,7 @@
 						<li class="page-item active"><a class="page-link" href="#">3</a></li>
 						<li class="page-item"><a class="page-link" href="#">4</a></li>
 						<li class="page-item disc">
-							<a class="page-link" href="#">
+							<a href="#" class="page-link">
 								<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M1.78308 1.95117L7.39283 7.56093L1.78308 13.1707" stroke="#171719" stroke-width="3" stroke-linecap="round"/>
 								</svg>
@@ -484,7 +484,7 @@
 	</div>
 </section>
 
-<section class="contacts section black">
+<section class="contacts section">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 d-flex justify-content-between">
