@@ -37,6 +37,7 @@
 		"webpack-stream": "^6.1.1"
 	},
 	"dependencies": {
+		"page-scroll-to-id": "^1.6.8",
 		"select2": "^4.1.0-rc.0",
 		"swiper": "^6.5.0",
 		"vue": "^2.6.12"

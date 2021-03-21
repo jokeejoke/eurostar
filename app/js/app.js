@@ -1,6 +1,7 @@
 import $ from 'jquery';
 window.jQuery = $;
 window.$ = $ // import module example (npm i -D jquery)
+
 import Swiper, {
 	Autoplay,
 	Pagination,
@@ -8,6 +9,7 @@ import Swiper, {
 } from 'swiper';
 import axios from 'axios';
 
+require('~/app/js/vendor/pageScroll2Id/jquery.malihu.PageScroll2id.js');
 require('~/app/js/vendor/select2-develop/dist/js/select2.min.js');
 
 
@@ -28,8 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	$("#file-upload").on("change", function () {
 		$(".custom-file-upload span").html($("#file-upload").val());
-	})
+	});
 
+	$("a[href*='#']").mPageScroll2id();
+	
 
 	/** END JQUERY CODE */
 
@@ -52,6 +56,26 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 	/** END Hamburger Menu Function */
+
+	/** Close Navbar Menu When Click Nav Link */
+	function closeHamburger () {
+		const $links = document.querySelectorAll(".navbar .navbar-link");
+		const $burgerBtn = document.querySelector('.hamburger')
+		const $mobileMenu = document.querySelector('.header-bottom')
+		$links.forEach(link => {
+			link.addEventListener("click", function() {
+				if($burgerBtn.classList.contains('hamburger__active')) {
+					$burgerBtn.classList.remove('hamburger__active')
+					$mobileMenu.classList.remove('active')
+					document.body.style.overflow = ''
+				} else {
+					$burgerBtn.classList.add('hamburger__active')
+					$mobileMenu.classList.add('active')
+					document.body.style.overflow = 'hidden'
+				}
+			})
+		})
+	}
 
 	/** Banner Slider */
 	const banneSlider = new Swiper('.banner-slider', {
@@ -86,6 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	/** END Banner Slider */
 
 	hamburgerMenu()
+	closeHamburger()
+
+	document.querySelector(".contacts-title").addEventListener("click", function() {
+		console.log('hm');
+	})
 
 
 })
