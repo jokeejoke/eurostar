@@ -76,7 +76,15 @@
 			<div class="col-xl-9">
 				<div class="catalog-filter">
 					<div class="catalog-filter__search">
-						<input type="text" placeholder="Поиск по названию" name="name" v-model="filter">
+						<input type="text" placeholder="Поиск по названию" name="name" v-model="filter" autocomplete="off" :class="{ 'active': filterTyping }">
+						<div class="catalog-search-results" :class="{ 'active': filterTyping }">
+							<ul v-if="filteredArtists().length">
+								<li v-for="artist in filteredArtists()"><a href="#">{{ artist.title }}</a></li>
+							</ul>
+							<ul v-else>
+								<li class="not-found">Ничего не найдено</li>
+							</ul>
+						</div>
 					</div>
 					<div class="catalog-filter__sort">
 						<select name="sort" class="filter-sort">
@@ -117,99 +125,34 @@
 						</div>
 						<div class="tab_item">
 							<div class="artists-category">
-								<a href="#">Mega Stars</a>
-								<a href="#">Disco 80’s</a>
-								<a href="#">Disco 90’s</a>
-								<a href="#">Club & Dance</a>
-								<a href="#">Rock / Metal / Blues</a>
-								<a href="#">Oriental</a>
-								<a href="#">Jazz</a>
-								<a href="#">Entertainment</a>
+								<a href="#" v-for="c in categories" @click.prevent="filteringByCategory(c.title)" :class="{ 'active' : filterByCategory == c.title }">{{ c.title }}</a>
 							</div>			
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-xl-9 col-lg-8 col-md-6">
-				<!--
-				<div class="catalog-preloader">
+				
+				<div class="catalog-preloader" v-if="loader">
 					<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 				</div>
-				-->
+				
 				<div class="artists-list">
-					<a href="#">A-dessa (Стас Костюшкин)</a>
-					<a href="#">Arsenium</a>
-					<a href="#">Burito</a>
-					<a href="#">Dan Balan</a>
-					<a href="#">Elvira t</a>
-					<a href="#">Emin (Эмин Агаларов)</a>
-					<a href="#">Агузарова Жанна</a>
-					<a href="#">Агурбаш Анжелика</a>
-					<a href="#">Агутин Леонид</a>
-					<a href="#">Азиза</a>
-					<a href="#">Алексеев</a>
-					<a href="#">Аллегрова Ирина</a>
-					<a href="#">Алсу</a>
-					<a href="#">Ани Лорак</a>
-					<a href="#">Апина Алена</a>
-					<a href="#">Бабкина Надежда</a>
-					<a href="#">Барских Макс</a>
-
-					<div class="sec">
-						<a href="#">A-dessa (Стас Костюшкин)</a>
-					<a href="#">Arsenium</a>
-					<a href="#">Burito</a>
-					<a href="#">Dan Balan</a>
-					<a href="#">Elvira t</a>
-					<a href="#">Emin (Эмин Агаларов)</a>
-					<a href="#">Агузарова Жанна</a>
-					<a href="#">Агурбаш Анжелика</a>
-					<a href="#">Агутин Леонид</a>
-					<a href="#">Азиза</a>
-					<a href="#">Алексеев</a>
-					<a href="#">Аллегрова Ирина</a>
-					<a href="#">Алсу</a>
-					<a href="#">Ани Лорак</a>
-					<a href="#">Апина Алена</a>
-					<a href="#">Бабкина Надежда</a>
-					<a href="#">Барских Макс</a>
-					</div>
-
-					<div class="third">
-						<a href="#">A-dessa (Стас Костюшкин)</a>
-					<a href="#">Arsenium</a>
-					<a href="#">Burito</a>
-					<a href="#">Dan Balan</a>
-					<a href="#">Elvira t</a>
-					<a href="#">Emin (Эмин Агаларов)</a>
-					<a href="#">Агузарова Жанна</a>
-					<a href="#">Агурбаш Анжелика</a>
-					<a href="#">Агутин Леонид</a>
-					<a href="#">Азиза</a>
-					<a href="#">Алексеев</a>
-					<a href="#">Аллегрова Ирина</a>
-					<a href="#">Алсу</a>
-					<a href="#">Ани Лорак</a>
-					<a href="#">Апина Алена</a>
-					<a href="#">Бабкина Надежда</a>
-					<a href="#">Барских Макс</a>
-					</div>
+					<a href="#" v-for="a in computedArtists()">{{ a.title }}</a>
 				</div>
 				<nav class="pagination-wrapper">
 					<ul class="pagination">
-						<li class="page-item disc">
-							<a href="#" class="page-link">
+						<li class="page-item disc" v-if="page > 1">
+							<a href="#" class="page-link" @click.prevent="page = +page - 1">
 								<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M8.14886 13.0488L2.53911 7.43907L8.14887 1.82931" stroke="#171719" stroke-width="3" stroke-linecap="round"/>
 								</svg>
 							</a>
 						</li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item active"><a class="page-link" href="#">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">4</a></li>
-						<li class="page-item disc">
-							<a href="#" class="page-link">
+						
+						
+						<li class="page-item disc" v-if="hasNextPage">
+							<a href="#" class="page-link" @click.prevent="page = +page + 1">
 								<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M1.78308 1.95117L7.39283 7.56093L1.78308 13.1707" stroke="#171719" stroke-width="3" stroke-linecap="round"/>
 								</svg>

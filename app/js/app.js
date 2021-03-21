@@ -129,41 +129,159 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 })
-/**
+
 var app = new Vue({
   el: '#catalog',
   data() {
 		return {
-			artistsList: [],
-			showPerPage: 6,
+			categories: [
+				{ title: "Mega Stars"},
+				{ title: "Disco 80"},
+				{ title: "Disco 90"},
+				{ title: "Club and Dance"}
+			],
+			artistsList: [
+				{ title: "A-dessa (Стас Костюшкин)", category: "Mega Stars" },
+				{ title: "Arsenium", category: "Disco 80" },
+				{ title: "Burito", category: "Disco 90" },
+				{ title: "Dan Balan", category: "Disco 90" },
+				{ title: "Elvira t", category: "Club and Dance" },
+				{ title: "Emin (Эмин Агаларов)", category: "Mega Stars" },
+				{ title: "Агузарова Жанна", category: "Disco 80" },
+				{ title: "Агурбаш Анжелика", category: "Disco 90" },
+				{ title: "Агутин Леонид", category: "Club and Dance" },
+				{ title: "Азиза", category: "Mega Stars" },
+				{ title: "Алексеев", category: "Disco 80" },
+				{ title: "Аллегрова Ирина", category: "Disco 90" },
+				{ title: "Алсу", category: "Club and Dance" },
+				{ title: "Ани Лорак", category: "Mega Stars" },
+				{ title: "Апина Алена", category: "Disco 80" },
+				{ title: "Бабкина Надежда", category: "Disco 90" },
+				{ title: "Барских Макс", category: "Club and Dance" },
+				{ title: "A-dessa (Стас Костюшкин)", category: "Mega Stars" },
+				{ title: "Arsenium", category: "Disco 80" },
+				{ title: "Burito", category: "Disco 90" },
+				{ title: "Dan Balan", category: "Disco 90" },
+				{ title: "Elvira t", category: "Club and Dance" },
+				{ title: "Emin (Эмин Агаларов)", category: "Mega Stars" },
+				{ title: "Агузарова Жанна", category: "Disco 80" },
+				{ title: "Агурбаш Анжелика", category: "Disco 90" },
+				{ title: "Агутин Леонид", category: "Club and Dance" },
+				{ title: "Азиза", category: "Mega Stars" },
+				{ title: "Алексеев", category: "Disco 80" },
+				{ title: "Аллегрова Ирина", category: "Disco 90" },
+				{ title: "Алсу", category: "Club and Dance" },
+				{ title: "Ани Лорак", category: "Mega Stars" },
+				{ title: "Апина Алена", category: "Disco 80" },
+				{ title: "Бабкина Надежда", category: "Disco 90" },
+				{ title: "Барских Макс", category: "Club and Dance" },
+				{ title: "A-dessa (Стас Костюшкин)", category: "Mega Stars" },
+				{ title: "Arsenium", category: "Disco 80" },
+				{ title: "Burito", category: "Disco 90" },
+				{ title: "Dan Balan", category: "Disco 90" },
+				{ title: "Elvira t", category: "Club and Dance" },
+				{ title: "Emin (Эмин Агаларов)", category: "Mega Stars" },
+				{ title: "Агузарова Жанна", category: "Disco 80" },
+				{ title: "Агурбаш Анжелика", category: "Disco 90" },
+				{ title: "Агутин Леонид", category: "Club and Dance" },
+				{ title: "Азиза", category: "Mega Stars" },
+				{ title: "Алексеев", category: "Disco 80" },
+				{ title: "Аллегрова Ирина", category: "Disco 90" },
+				{ title: "Алсу", category: "Club and Dance" },
+				{ title: "Ани Лорак", category: "Mega Stars" },
+				{ title: "Апина Алена", category: "Disco 80" },
+				{ title: "Бабкина Надежда", category: "Disco 90" },
+				{ title: "Барских Макс", category: "Club and Dance" },
+				{ title: "A-dessa (Стас Костюшкин)", category: "Mega Stars" },
+				{ title: "Arsenium", category: "Disco 80" },
+				{ title: "Burito", category: "Disco 90" },
+				{ title: "Dan Balan", category: "Disco 90" },
+				{ title: "Elvira t", category: "Club and Dance" },
+				{ title: "Emin (Эмин Агаларов)", category: "Mega Stars" },
+				{ title: "Агузарова Жанна", category: "Disco 80" },
+				{ title: "Агурбаш Анжелика", category: "Disco 90" },
+				{ title: "Агутин Леонид", category: "Club and Dance" },
+				{ title: "Азиза", category: "Mega Stars" },
+				{ title: "Алексеев", category: "Disco 80" },
+				{ title: "Аллегрова Ирина", category: "Disco 90" },
+				{ title: "Алсу", category: "Club and Dance" },
+				{ title: "Ани Лорак", category: "Mega Stars" },
+				{ title: "Апина Алена", category: "Disco 80" },
+				{ title: "Бабкина Надежда", category: "Disco 90" },
+				{ title: "Барских Макс", category: "Club and Dance" },
+				{ title: "A-dessa (Стас Костюшкин)", category: "Mega Stars" },
+				{ title: "Arsenium", category: "Disco 80" },
+				{ title: "Burito", category: "Disco 90" },
+				{ title: "Dan Balan", category: "Disco 90" },
+				{ title: "Elvira t", category: "Club and Dance" },
+				{ title: "Emin (Эмин Агаларов)", category: "Mega Stars" },
+				{ title: "Агузарова Жанна", category: "Disco 80" },
+				{ title: "Агурбаш Анжелика", category: "Disco 90" },
+				{ title: "Агутин Леонид", category: "Club and Dance" },
+				{ title: "Азиза", category: "Mega Stars" },
+				{ title: "Алексеев", category: "Disco 80" },
+				{ title: "Аллегрова Ирина", category: "Disco 90" },
+				{ title: "Алсу", category: "Club and Dance" },
+			],
+			showPerPage: 51,
 			page: 1,
 			filter: "",
-			loader: true
+			filterByCategory: "",
+			loader: false,
+			hasNextPage: true,
+			filterTyping: false,
 		}
 	},
 	created() {
-		const _self = this
-		axios.get('https://jsonplaceholder.typicode.com/todos')
-		.then((r) => {
-			_self.artistsList = r.data;
-			_self.loader = false
-		})
-		.catch(e => console.log(e));
-		
+		this.setShowPerPageByWidth()
+		this.setShowPerPageByResize()
+	},
+	watch: {
+		filter() {
+			this.filterTyping = this.filter.length
+		}
 	},
 	methods: {
+		filteringByCategory(name) {
+			this.filterByCategory = name;
+			this.page = 1;
+		},
 		filteredArtists() {
-
+			return this.artistsList.filter(a => a.title.toUpperCase().includes(this.filter.toUpperCase())).slice(0,10)
+		},
+		computedArtists() {
 			const start = (this.page - 1) * this.showPerPage;
 			const end = this.page * this.showPerPage;
 
-			return this.artistsList.filter(a => a.title.includes(this.filter)).slice(start,end)
+			const filterArtists = this.artistsList.filter(a => a.category.includes(this.filterByCategory))
+
+			this.hasNextPage = filterArtists.length > end
+
+			return filterArtists.slice(start,end)
+		},
+		setShowPerPageByWidth() {
+			if (window.innerWidth < 1200 && window.innerWidth > 991) {
+				this.showPerPage = 34
+			}
+			if (window.innerWidth < 991) {
+				this.showPerPage = 17
+			}
+		},
+		setShowPerPageByResize() {
+			const _self = this
+			window.addEventListener("resize", function() {
+				console.log(window.innerWidth);
+				if (window.innerWidth < 1200 && window.innerWidth >= 993) {
+					_self.showPerPage = 34
+				}
+				if (window.innerWidth <= 993) {
+					_self.showPerPage = 17
+				}
+				if (window.innerWidth > 1200) {
+					_self.showPerPage = 51
+				}
+			})
 		}
 	},
-	watch: {
-		page() {
-			console.log(typeof this.page);
-		}
-	}
 })
- */
+ 
