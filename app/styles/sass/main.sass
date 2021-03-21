@@ -197,9 +197,17 @@
     right: 16px
     line-height: 20px
     color: rgba(255, 255, 255, 0.61)
+    transition: $trs
     +media-breakpoint-down(sm)
       bottom: -47px
       left: 0
+    &:hover
+      color: $accent
+      svg
+        fill: $accent
+    svg
+      transition: $trs
+      fill: rgba(255,255, 255, .61)
   .personal
     max-width: 380px
     font-weight: 500
@@ -254,3 +262,53 @@
     margin-top: -7px
     +media-breakpoint-down(sm)
       flex-direction: column
+
+.form-popup
+  max-width: 762px
+  margin: 0 auto
+  +media-breakpoint-down(sm)
+    margin: 0 9px
+    max-width: 100%
+.form-close
+  position: absolute
+  top: 26px
+  right: 26px
+  background: transparent
+  border: none
+  +media-breakpoint-down(sm)
+    top: 15px
+    right: 15px
+  svg
+    width: 30px
+    height: 30px
+    +media-breakpoint-down(sm)
+      width: 25px
+      height: 25px
+.form-success
+  &__title
+    line-height: 42px !important
+    +media-breakpoint-down(sm)
+      margin-bottom: 26px !important
+      line-height: 30px !important
+  .contacts-logo
+    display: block
+    text-align: right
+    margin-top: 12px
+    +media-breakpoint-down(sm)
+      text-align: center
+      margin-top: 53px
+
+.mfp-fade.mfp-bg
+  opacity: 0
+  transition: $trs
+  &.mfp-ready
+    opacity: 0.8
+  &.mfp-removing
+    opacity: 0
+.mfp-fade.mfp-wrap .mfp-content
+  opacity: 0
+  transition: $trs
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content
+  opacity: 1
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content
+  opacity: 0

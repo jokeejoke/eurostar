@@ -8,6 +8,7 @@ import Swiper, {
 	Navigation
 } from 'swiper';
 import axios from 'axios';
+import magnificPopup from 'magnific-popup'
 
 require('~/app/js/vendor/pageScroll2Id/jquery.malihu.PageScroll2id.js');
 require('~/app/js/vendor/select2-develop/dist/js/select2.min.js');
@@ -32,7 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		$(".custom-file-upload span").html($("#file-upload").val());
 	});
 
-	$("a[href*='#']").mPageScroll2id();
+	$(".scroll-link").mPageScroll2id();
+
+	$('.open-popup').magnificPopup({
+		type:'inline',
+		removalDelay: 300,
+		mainClass: 'mfp-fade',
+		showCloseBtn: false,
+		midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+	});
+	$(".form-close").on("click", function() {
+		$.magnificPopup.close()
+	})
 	
 
 	/** END JQUERY CODE */
@@ -71,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				} else {
 					$burgerBtn.classList.add('hamburger__active')
 					$mobileMenu.classList.add('active')
-					document.body.style.overflow = 'hidden'
 				}
 			})
 		})
