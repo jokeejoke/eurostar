@@ -184,7 +184,15 @@
 			<div class="col-xl-9">
 				<div class="catalog-filter">
 					<div class="catalog-filter__search">
-						<input type="text" placeholder="Поиск по названию" name="name" v-model="filter">
+						<input type="text" placeholder="Поиск по названию" name="name" v-model="filter" autocomplete="off" :class="{ 'active': filterTyping }">
+						<div class="catalog-search-results" :class="{ 'active': filterTyping }">
+							<ul v-if="filteredArtists().length">
+								<li v-for="artist in filteredArtists()"><a href="#">{{ artist.title }}</a></li>
+							</ul>
+							<ul v-else>
+								<li class="not-found">Ничего не найдено</li>
+							</ul>
+						</div>
 					</div>
 					<div class="catalog-filter__sort">
 						<select name="sort" class="filter-sort">
@@ -225,99 +233,34 @@
 						</div>
 						<div class="tab_item">
 							<div class="artists-category">
-								<a href="#">Mega Stars</a>
-								<a href="#">Disco 80’s</a>
-								<a href="#">Disco 90’s</a>
-								<a href="#">Club & Dance</a>
-								<a href="#">Rock / Metal / Blues</a>
-								<a href="#">Oriental</a>
-								<a href="#">Jazz</a>
-								<a href="#">Entertainment</a>
+								<a href="#" v-for="c in categories" @click.prevent="filteringByCategory(c.title)" :class="{ 'active' : filterByCategory == c.title }">{{ c.title }}</a>
 							</div>			
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-xl-9 col-lg-8 col-md-6">
-				<!--
-				<div class="catalog-preloader">
+				
+				<div class="catalog-preloader" v-if="loader">
 					<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 				</div>
-				-->
+				
 				<div class="artists-list">
-					<a href="#">A-dessa (Стас Костюшкин)</a>
-					<a href="#">Arsenium</a>
-					<a href="#">Burito</a>
-					<a href="#">Dan Balan</a>
-					<a href="#">Elvira t</a>
-					<a href="#">Emin (Эмин Агаларов)</a>
-					<a href="#">Агузарова Жанна</a>
-					<a href="#">Агурбаш Анжелика</a>
-					<a href="#">Агутин Леонид</a>
-					<a href="#">Азиза</a>
-					<a href="#">Алексеев</a>
-					<a href="#">Аллегрова Ирина</a>
-					<a href="#">Алсу</a>
-					<a href="#">Ани Лорак</a>
-					<a href="#">Апина Алена</a>
-					<a href="#">Бабкина Надежда</a>
-					<a href="#">Барских Макс</a>
-
-					<div class="sec">
-						<a href="#">A-dessa (Стас Костюшкин)</a>
-					<a href="#">Arsenium</a>
-					<a href="#">Burito</a>
-					<a href="#">Dan Balan</a>
-					<a href="#">Elvira t</a>
-					<a href="#">Emin (Эмин Агаларов)</a>
-					<a href="#">Агузарова Жанна</a>
-					<a href="#">Агурбаш Анжелика</a>
-					<a href="#">Агутин Леонид</a>
-					<a href="#">Азиза</a>
-					<a href="#">Алексеев</a>
-					<a href="#">Аллегрова Ирина</a>
-					<a href="#">Алсу</a>
-					<a href="#">Ани Лорак</a>
-					<a href="#">Апина Алена</a>
-					<a href="#">Бабкина Надежда</a>
-					<a href="#">Барских Макс</a>
-					</div>
-
-					<div class="third">
-						<a href="#">A-dessa (Стас Костюшкин)</a>
-					<a href="#">Arsenium</a>
-					<a href="#">Burito</a>
-					<a href="#">Dan Balan</a>
-					<a href="#">Elvira t</a>
-					<a href="#">Emin (Эмин Агаларов)</a>
-					<a href="#">Агузарова Жанна</a>
-					<a href="#">Агурбаш Анжелика</a>
-					<a href="#">Агутин Леонид</a>
-					<a href="#">Азиза</a>
-					<a href="#">Алексеев</a>
-					<a href="#">Аллегрова Ирина</a>
-					<a href="#">Алсу</a>
-					<a href="#">Ани Лорак</a>
-					<a href="#">Апина Алена</a>
-					<a href="#">Бабкина Надежда</a>
-					<a href="#">Барских Макс</a>
-					</div>
+					<a href="#" v-for="a in computedArtists()">{{ a.title }}</a>
 				</div>
 				<nav class="pagination-wrapper">
 					<ul class="pagination">
-						<li class="page-item disc">
-							<a href="#" class="page-link">
+						<li class="page-item disc" v-if="page > 1">
+							<a href="#" class="page-link" @click.prevent="page = +page - 1">
 								<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M8.14886 13.0488L2.53911 7.43907L8.14887 1.82931" stroke="#171719" stroke-width="3" stroke-linecap="round"/>
 								</svg>
 							</a>
 						</li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item active"><a class="page-link" href="#">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">4</a></li>
-						<li class="page-item disc">
-							<a href="#" class="page-link">
+						
+						
+						<li class="page-item disc" v-if="hasNextPage">
+							<a href="#" class="page-link" @click.prevent="page = +page + 1">
 								<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M1.78308 1.95117L7.39283 7.56093L1.78308 13.1707" stroke="#171719" stroke-width="3" stroke-linecap="round"/>
 								</svg>
@@ -774,17 +717,17 @@
     </div>
     <div class="form-group">
       <textarea name="message" placeholder="Сообщение"></textarea>
-      <label for="file-upload" class="custom-file-upload">
+      <label for="file-upload2" class="custom-file-upload">
         <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4.78416 17.1708C3.62626 17.1708 2.54075 16.7244 1.72743 15.9139C0.914118 15.1034 0.465698 14.0224 0.465698 12.8689C0.465698 11.7158 0.913791 10.6344 1.72743 9.8242L10.6677 0.918213C11.9468 -0.35533 13.9343 -0.298227 15.2907 1.05297C16.6471 2.40418 16.7054 4.38383 15.4263 5.65835L7.02757 14.025C6.23915 14.8104 4.95514 14.8117 4.16541 14.025C3.37633 13.2386 3.37666 11.9595 4.16541 11.1738L9.85467 5.5063C10.0466 5.31508 10.3575 5.31508 10.5494 5.5063C10.7414 5.69751 10.7414 6.00716 10.5494 6.19837L4.86015 11.8659C4.45431 12.2701 4.45431 12.9283 4.86015 13.3329C5.26664 13.7372 5.92699 13.7365 6.33283 13.3329L14.7316 4.96627C15.6144 4.08657 15.5564 2.70176 14.596 1.74505C13.6356 0.788347 12.2455 0.730592 11.3624 1.61029L2.42217 10.5163C1.79425 11.1418 1.44836 11.9774 1.44836 12.8689C1.44836 13.7607 1.79425 14.5963 2.42217 15.2218C3.05009 15.8473 3.88895 16.1919 4.78416 16.1919C5.67903 16.1919 6.51789 15.8473 7.14581 15.2218L16.086 6.31584C16.278 6.12463 16.5888 6.12463 16.7808 6.31584C16.9727 6.50705 16.9727 6.81671 16.7808 7.00792L7.84055 15.9139C7.02724 16.7241 5.94173 17.1708 4.78416 17.1708Z" fill="white" fill-opacity="0.61"/>
         </svg>								
         <span>Прикрепить файл</span>
       </label>
-      <input type="file" id="file-upload">
+      <input type="file" id="file-upload2">
     </div>
     <div class="form-footer">
-      <input type="checkbox" id="personal" required>
-      <label for="personal" class="personal">
+      <input type="checkbox" id="personal2" required>
+      <label for="personal" class="personal2">
         Согласие на обработку персональных данных
         <span>
           Обработка персональных данных осуществляется согласно ФЗ РФ от 27 июля 2006 г. №152 ФЗ.
@@ -817,6 +760,7 @@
   -->
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 <script src="js/app.min.js"></script>
 
 </body>
