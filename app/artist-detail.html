@@ -59,7 +59,7 @@
 
 <section class="catalog" id="catalog">
 	<div class="container">
-		<div class="row">
+		<div class="row hidden-md">
 			<div class="col-xl-3">
 				<h3 class="catalog__title">
 					<svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +99,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xl-3 col-lg-4 col-md-6">
+			<div class="col-xl-3 col-lg-4 hidden-md">
 				<div class="tab-wrapper">
 					<div class="tabs">
 						<span class="tab">Российские</span>
@@ -131,38 +131,75 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xl-9 col-lg-8 col-md-6">
+			<div class="col-xl-9 col-lg-8">
 				
 				<div class="catalog-preloader" v-if="loader">
 					<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 				</div>
-				
-				<div class="artists-list">
-					<a href="#" v-for="a in computedArtists()">{{ a.title }}</a>
+				<div class="catalog-detail">
+					<a href="#" class="catalog-detail__back">
+						<svg width="19" height="8" viewBox="0 0 19 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0.646446 3.64645C0.451185 3.84171 0.451185 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.73079 4.34027 7.73079 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976309 4.7308 0.659727 4.53553 0.464465C4.34027 0.269203 4.02369 0.269203 3.82843 0.464465L0.646446 3.64645ZM19 3.5L1 3.5L1 4.5L19 4.5L19 3.5Z" />
+						</svg>							
+						Вернуться к списку
+					</a>
+					<div class="catalog-detail__wrap">
+						<div class="catalog-detail__left">
+							<div class="catalog-detail__title hidden-md">Агата Кристи</div>
+							<div class="catalog-detail__text">
+								<p>
+									«Агата Кристи» — советская и российская рок-группа, одна из наиболее популярных в стране в середине и во второй половине 1990-х годов. Основана в 1985 году в Свердловске Вадимом Самойловым, Александром Козловым и Петром Маемпод названием ВИА «РТФ УПИ», официально же история группы отсчитывается с концерта 20 февраля 1988 года.
+								</p>
+								<p>
+									Во время записи альбома «Второй фронт» в начале того же года к группе примкнул младший брат Вадима Глеб. Впоследствии состав группы неоднократно менялся, но её лидерами и вокалистами неизменно оставались братья Самойловы. Они же, вместе с Александром Козловым, являются авторами всех песен «Агаты Кристи».
+								</p>
+							</div>
+							<div class="catalog-detail__note">
+								<p>
+									* Для того, чтобы получить более точную информацию о занятости артиста, его гонораре и условиях выступления, Вы можете позвонить нам или отправить запрос on-line.
+								</p>
+								<p>
+									Мы моментально ответим на все Ваши вопросы и предоставим всю интересующую информацию, в самые короткие сроки.
+								</p>
+							</div>
+							<button type="button" class="theme-btn-wb catalog-detail__btn">
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9.27196 6.73925C9.17279 6.5415 8.97096 6.41668 8.74989 6.41668H7.58321V0.583324C7.58321 0.261324 7.32246 0 6.99989 0C6.67732 0 6.41657 0.261324 6.41657 0.583324V6.41665H5.24989C5.02882 6.41665 4.82697 6.54147 4.72782 6.73922C4.62982 6.93697 4.65082 7.17322 4.78324 7.34997L6.53324 9.6833C6.54082 9.69322 6.55249 9.69672 6.56067 9.70605C6.59917 9.75155 6.64467 9.78655 6.69542 9.81862C6.71642 9.83144 6.73274 9.84837 6.75549 9.85887C6.83017 9.89387 6.91182 9.91662 6.99992 9.91662C7.08802 9.91662 7.16967 9.89387 7.24492 9.85887C7.26709 9.84837 7.28399 9.83144 7.30442 9.81862C7.35517 9.78655 7.40067 9.75155 7.43917 9.70605C7.44674 9.69672 7.45899 9.69322 7.46659 9.6833L9.21659 7.34997C9.34957 7.17325 9.37057 6.937 9.27196 6.73925Z" />
+									<path d="M13.4167 8.75C13.0941 8.75 12.8334 9.01132 12.8334 9.33332V11.0833C12.8334 12.0481 12.0482 12.8333 11.0834 12.8333H2.91668C1.95185 12.8333 1.16668 12.0481 1.16668 11.0833V9.33332C1.16668 9.01132 0.905926 8.75 0.583352 8.75C0.26075 8.75 0 9.01132 0 9.33332V11.0833C0 12.6916 1.30843 14 2.91668 14H11.0834C12.6916 14 14 12.6916 14 11.0833V9.33332C14 9.01132 13.7393 8.75 13.4167 8.75Z" />
+								</svg>									
+								Скачать райдер
+							</button>
+						</div>
+						<div class="catalog-detail__right">
+							<div class="catalog-detail__title">Агата Кристи</div>
+							<div class="catalog-detail-media">
+								<div class="catalog-detail-media__item">
+									<picture>
+										<source srcset="images/dist/detail/1.webp" type="image/webp">
+										<img src="images/dist/detail/1.png">
+									</picture>
+								</div>
+								<div class="catalog-detail-media__item video">
+									<a href="https://www.youtube.com/watch?v=s8BrffDg3bA" class="popup-video">
+										<picture>
+											<source srcset="images/dist/detail/2.webp" type="image/webp">
+											<img src="images/dist/detail/2.png">
+										</picture>
+									</a>
+								</div>
+							</div>
+							<div class="catalog-detail__note hidden-md">
+								<p>
+									* Для того, чтобы получить более точную информацию о занятости артиста, его гонораре и условиях выступления, Вы можете позвонить нам или отправить запрос on-line.
+								</p>
+								<p>
+									Мы моментально ответим на все Ваши вопросы и предоставим всю интересующую информацию, в самые короткие сроки.
+								</p>
+							</div>
+						</div>
+					</div>
 				</div>
-				<nav class="pagination-wrapper">
-					<ul class="pagination">
-						<li class="page-item disc">
-							<a href="#" class="page-link">
-								<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M8.14886 13.0488L2.53911 7.43907L8.14887 1.82931" stroke="#171719" stroke-width="3" stroke-linecap="round"/>
-								</svg>
-							</a>
-						</li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item active"><a class="page-link" href="#">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">4</a></li>
-						<li class="page-item disc" v-if="hasNextPage">
-							<a href="#" class="page-link" @click.prevent="page = +page + 1">
-								<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M1.78308 1.95117L7.39283 7.56093L1.78308 13.1707" stroke="#171719" stroke-width="3" stroke-linecap="round"/>
-								</svg>
-							</a>
-						</li>
-					</ul>
-				</nav>
-				<a href="#form-popup" class="theme-btn catalog-mobile-btn open-popup">Связаться с нами</a>
+				<a href="#form-popup" class="theme-btn catalog-mobile-btn open-popup hidden-md">Связаться с нами</a>
 			</div>
 		</div>
 	</div>
@@ -490,7 +527,7 @@
 							<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M4.78416 17.1708C3.62626 17.1708 2.54075 16.7244 1.72743 15.9139C0.914118 15.1034 0.465698 14.0224 0.465698 12.8689C0.465698 11.7158 0.913791 10.6344 1.72743 9.8242L10.6677 0.918213C11.9468 -0.35533 13.9343 -0.298227 15.2907 1.05297C16.6471 2.40418 16.7054 4.38383 15.4263 5.65835L7.02757 14.025C6.23915 14.8104 4.95514 14.8117 4.16541 14.025C3.37633 13.2386 3.37666 11.9595 4.16541 11.1738L9.85467 5.5063C10.0466 5.31508 10.3575 5.31508 10.5494 5.5063C10.7414 5.69751 10.7414 6.00716 10.5494 6.19837L4.86015 11.8659C4.45431 12.2701 4.45431 12.9283 4.86015 13.3329C5.26664 13.7372 5.92699 13.7365 6.33283 13.3329L14.7316 4.96627C15.6144 4.08657 15.5564 2.70176 14.596 1.74505C13.6356 0.788347 12.2455 0.730592 11.3624 1.61029L2.42217 10.5163C1.79425 11.1418 1.44836 11.9774 1.44836 12.8689C1.44836 13.7607 1.79425 14.5963 2.42217 15.2218C3.05009 15.8473 3.88895 16.1919 4.78416 16.1919C5.67903 16.1919 6.51789 15.8473 7.14581 15.2218L16.086 6.31584C16.278 6.12463 16.5888 6.12463 16.7808 6.31584C16.9727 6.50705 16.9727 6.81671 16.7808 7.00792L7.84055 15.9139C7.02724 16.7241 5.94173 17.1708 4.78416 17.1708Z" />
 							</svg>								
-							<span class="path">Прикрепить файл</span>
+							<span>Прикрепить файл</span>
 						</label>
 						<input type="file" id="file-upload">
 					</div>

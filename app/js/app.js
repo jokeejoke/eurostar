@@ -7,7 +7,6 @@ import Swiper, {
 	Pagination,
 	Navigation
 } from 'swiper';
-import axios from 'axios';
 import magnificPopup from 'magnific-popup'
 
 require('~/app/js/vendor/pageScroll2Id/jquery.malihu.PageScroll2id.js');
@@ -29,9 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		minimumResultsForSearch: Infinity
 	});
 
-	$("#file-upload").on("change", function () {
-		$(".custom-file-upload span").html($("#file-upload").val());
-	});
+	function changePath(sel) {
+		$(sel).on("change", function () {
+			$(this).prev().find(".path").html($(sel).val());
+		});
+	}
+	changePath("#file-upload2");
+	changePath("#file-upload");
+	
 
 	$(".scroll-link").mPageScroll2id();
 
@@ -42,6 +46,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		showCloseBtn: false,
 		midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
 	});
+	if($('.popup-video').length) {
+		$('.popup-video').magnificPopup({
+			disableOn: 700,
+			type: 'iframe',
+			mainClass: 'mfp-fade',
+			removalDelay: 160,
+			preloader: false,
+			fixedContentPos: false
+		});
+	}
+	
 	$(".form-close").on("click", function() {
 		$.magnificPopup.close()
 	})
@@ -270,7 +285,6 @@ var app = new Vue({
 		setShowPerPageByResize() {
 			const _self = this
 			window.addEventListener("resize", function() {
-				console.log(window.innerWidth);
 				if (window.innerWidth < 1200 && window.innerWidth >= 993) {
 					_self.showPerPage = 34
 				}

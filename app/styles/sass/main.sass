@@ -135,6 +135,7 @@
     +media-breakpoint-down(sm)
       font-size: 24px
       margin-bottom: 12px
+      max-width: 90%
   &__description
     font-size: 18px
     line-height: 22px
@@ -170,6 +171,7 @@
     +media-breakpoint-down(sm)
       max-width: 100%
       margin-bottom: 16px
+      border-radius: 0
     &[type="file"]
       display: none !important
     &[type="checkbox"]
@@ -198,6 +200,7 @@
     line-height: 20px
     color: rgba(255, 255, 255, 0.61)
     transition: $trs
+    z-index: 11
     +media-breakpoint-down(sm)
       bottom: -47px
       left: 0
@@ -208,6 +211,8 @@
     svg
       transition: $trs
       fill: rgba(255,255, 255, .61)
+      +media-breakpoint-down(sm)
+        margin-right: 12px
   .personal
     max-width: 380px
     font-weight: 500
@@ -278,6 +283,9 @@
   +media-breakpoint-down(sm)
     top: 15px
     right: 15px
+  +media-breakpoint-down(xs)
+    right: 0
+    top: 20px
   svg
     width: 30px
     height: 30px
@@ -312,3 +320,7 @@
   opacity: 1
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content
   opacity: 0
+
+.hidden-md
+  +media-breakpoint-down(md)
+    display: none !important
