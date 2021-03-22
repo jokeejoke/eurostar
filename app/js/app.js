@@ -39,13 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	$(".scroll-link").mPageScroll2id();
 
-	$('.open-popup').magnificPopup({
-		type:'inline',
-		removalDelay: 300,
-		mainClass: 'mfp-fade',
-		showCloseBtn: false,
-		midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-	});
+	if($('.open-popup').length) {
+		$('.open-popup').magnificPopup({
+			type:'inline',
+			removalDelay: 300,
+			mainClass: 'mfp-fade',
+			showCloseBtn: false,
+			midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+		});
+	}
+	
 	if($('.popup-video').length) {
 		$('.popup-video').magnificPopup({
 			disableOn: 700,
@@ -56,10 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			fixedContentPos: false
 		});
 	}
+	if($(".form-close").length) {
+		$(".form-close").on("click", function() {
+			$.magnificPopup.close()
+		})
+	}
 	
-	$(".form-close").on("click", function() {
-		$.magnificPopup.close()
-	})
 	
 
 	/** END JQUERY CODE */
@@ -137,10 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	hamburgerMenu()
 	closeHamburger()
-
-	document.querySelector(".contacts-title").addEventListener("click", function() {
-		console.log('hm');
-	})
 
 
 })

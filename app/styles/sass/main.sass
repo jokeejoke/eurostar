@@ -37,8 +37,15 @@
   &:hover
     background: $accent
     color: $titlecolor
+    text-decoration: none
+    svg
+      fill: $titlecolor
   &:active
     background: #C6A26D
+  svg
+    fill: $accent
+    margin-bottom: 5px
+    margin-right: 8px
 
 
 .section
@@ -62,7 +69,7 @@
 			content: ""
 			position: absolute
 			top: 47%
-			right: -100%
+			right: -140px
 			width: 106px
 			height: 3px
 			background-image: url(../images/dist/vector.svg)
@@ -107,6 +114,9 @@
 			text-decoration: none
 			svg
 				fill: $textcolor
+
+.section-title
+  display: inline-block
 
 .form
   position: relative
@@ -324,3 +334,38 @@
 .hidden-md
   +media-breakpoint-down(md)
     display: none !important
+
+.breadcrumb
+  margin: 0
+  padding: 0 0 25px
+  list-style: none
+  display: flex
+  flex-wrap: wrap
+  &-item
+    margin-right: 37px
+    position: relative
+    &:last-child
+      &::after
+        display: none
+    &::after
+      content: ""
+      position: absolute
+      top: 5px
+      right: -27px
+      width: 16px
+      height: 4px
+      display: block
+      background-image: url(../images/dist/arrow-right.svg)
+      background-size: contain
+      background-repeat: no-repeat
+    a
+      color: rgba(255, 255, 255, 0.39)
+      font-size: 12px
+      line-height: 15px
+      display: block
+      height: 100%
+      text-decoration: underline
+    &.active
+      font-size: 12px
+      line-height: 15px
+      color: rgba(255, 255, 255, 0.65)

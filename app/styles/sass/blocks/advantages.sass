@@ -1,0 +1,42 @@
+.advantages
+  position: relative
+  padding: 60px 0
+  background-image: url(../images/dist/advantages-bg.png)
+  background-size: contain
+  background-repeat: no-repeat
+  background: #121214
+  background-position: -180px 0
+  +media-breakpoint-down(lg)
+    padding: 60px 0 30px
+  +media-breakpoint-down(md)
+    background-repeat: no-repeat
+    background-position: center
+    padding: 46px 0 34px
+  &__title
+    margin-bottom: 32px
+    &::after
+      +media-breakpoint-down(md)
+        display: none
+  &-item
+    position: relative
+    padding: 19px 20px
+    border: 1px solid $accent
+    border-radius: 5px
+    height: 100%
+    background: #17171A
+    &__title
+      font-weight: 600
+      font-size: 18px
+      line-height: 24px
+      color: rgba(255, 255, 255, 0.9)
+      margin-bottom: 8px
+    &__descr
+      p
+        color: rgba(255, 255, 255, 0.75)
+        font-size: 14px
+        line-height: 20px
+  .mg
+    +media-breakpoint-down(lg)
+      margin-bottom: 30px
+    +media-breakpoint-down(sm)
+      margin-bottom: 12px
