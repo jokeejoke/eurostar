@@ -43,7 +43,6 @@
   &:active
     background: #C6A26D
   svg
-    fill: $accent
     margin-bottom: 5px
     margin-right: 8px
 
@@ -69,7 +68,7 @@
 			content: ""
 			position: absolute
 			top: 47%
-			right: -140px
+			right: -130px
 			width: 106px
 			height: 3px
 			background-image: url(../images/dist/vector.svg)
@@ -341,6 +340,10 @@
   list-style: none
   display: flex
   flex-wrap: wrap
+  +media-breakpoint-down(lg)
+    padding: 36px 0 25px
+  +media-breakpoint-down(sm)
+    padding: 26px 0 25px
   &-item
     margin-right: 37px
     position: relative

@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	/** Close Navbar Menu When Click Nav Link */
 	function closeHamburger () {
-		const $links = document.querySelectorAll(".navbar .navbar-link");
+		const $links = document.querySelectorAll(".header .navbar .navbar-link");
 		const $burgerBtn = document.querySelector('.hamburger')
 		const $mobileMenu = document.querySelector('.header-bottom')
 		$links.forEach(link => {
@@ -140,8 +140,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	/** END Banner Slider */
 
-	hamburgerMenu()
-	closeHamburger()
+	window.addEventListener("resize", function() {
+		if(window.innerWidth < 1200) {
+			hamburgerMenu()
+			closeHamburger()
+		}
+	})
+
+	if(window.innerWidth < 1200) {
+		hamburgerMenu()
+		closeHamburger()
+	}
+	
 
 
 })
