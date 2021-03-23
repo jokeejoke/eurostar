@@ -108,8 +108,7 @@
 	</header>
 	<!-- Header End -->
 
-<div class="inner-page about">
-	<nav class="breadcrumb-nav">
+	<nav class="breadcrumb-nav about">
 		<div class="container">
 			<ul class="breadcrumb">
 				<li class="breadcrumb-item"><a href="#">Главная</a></li>
@@ -117,6 +116,8 @@
 			</ul>
 		</div>
 	</nav>
+
+<div class="inner-page about">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -302,9 +303,9 @@
     <div class="form__title">Форма обратной связи</div>
     <p class="form__description">Заполните форму и мы свяжемся с Вами в ближайшее время</p>
     <div class="form-group flex">
-      <input type="text" placeholder="Имя" name="name" minlength="3" required>
-      <input type="text" placeholder="Телефон" name="phone" required>
-      <input type="email" placeholder="Email" required minlength="4">
+      <input type="text" placeholder="Имя" name="name" minlength="3" autocomplete="off" required>
+      <input type="text" placeholder="Телефон" name="phone" class="phone" autocomplete="off" required>
+      <input type="email" placeholder="Email" autocomplete="off" required minlength="4">
     </div>
     <div class="form-group">
       <textarea name="message" placeholder="Сообщение"></textarea>
