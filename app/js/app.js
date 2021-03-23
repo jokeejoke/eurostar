@@ -7,7 +7,8 @@ import Swiper, {
 	Pagination,
 	Navigation
 } from 'swiper';
-import magnificPopup from 'magnific-popup'
+import magnificPopup from 'magnific-popup';
+import IMask from 'imask';
 
 require('~/app/js/vendor/pageScroll2Id/jquery.malihu.PageScroll2id.js');
 require('~/app/js/vendor/select2-develop/dist/js/select2.min.js');
@@ -16,6 +17,10 @@ require('~/app/js/vendor/select2-develop/dist/js/select2.min.js');
 document.addEventListener('DOMContentLoaded', () => {
 
 	/** JQUERY CODE */
+
+	$(window).on("load", function () {
+		$(".preloader").delay(500).fadeOut("slow");
+	});
 	
 	$(".tab_item").not(":first").hide();
 	$(".tab-wrapper .tab").click(function () {
@@ -108,6 +113,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
+	function phoneMask() {
+		const $phoneMask = document.querySelectorAll('.phone')
+		if ($phoneMask) {
+			$phoneMask.forEach(phone => {
+				IMask(
+					phone, {
+						mask: '+{7}(000)000-00-00'
+				});
+			})
+		}
+	}
+
 	/** Banner Slider */
 	const banneSlider = new Swiper('.banner-slider', {
 		speed: 1000,
@@ -151,6 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		hamburgerMenu()
 		closeHamburger()
 	}
+
+	phoneMask()
 	
 
 

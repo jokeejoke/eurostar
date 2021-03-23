@@ -2,7 +2,7 @@
   position: relative
   padding: 25px 0 60px
   +media-breakpoint-down(md)
-    padding: 25px 0 46px
+    padding: 21px 0 46px
   &.about
     background: #0C0C0D
   &__title
@@ -15,6 +15,7 @@
     display: inline-block
     position: relative
     margin-bottom: 27px
+    word-break: break-word
     +media-breakpoint-down(sm)
       display: none
       font-size: 24px
@@ -84,6 +85,8 @@
   &__images
     +media-breakpoint-down(sm)
       margin-bottom: 15px
+    &:last-child
+      margin-bottom: 0
     img
       max-width: 100%
       height: auto

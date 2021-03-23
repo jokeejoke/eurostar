@@ -1,0 +1,138 @@
+<!--#set var="title" value="Eurostar - международное концертное агенство" -->
+<!--#include virtual="/parts/header.html" -->
+
+<nav class="breadcrumb-nav">
+	<div class="container">
+		<ul class="breadcrumb">
+			<li class="breadcrumb-item"><a href="#">Главная</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Наши проекты</li>
+		</ul>
+	</div>
+</nav>
+
+<section class="section poster">
+	<div class="container d-flex justify-content-xl-between flex-column flex-xl-row">
+		<h3 class="section-title poster-title no-home">Наши проекты</h3>
+		<div class="catalog-filter">
+			<div class="catalog-filter__sort">
+				<select name="sort" class="filter-sort">
+					<option value="" disabled selected>Сортировка</option>
+					<option value="">Сначала новые</option>
+					<option value="">Сначала последние</option>
+					<option value="">По популярности</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="container pos-r">
+		<div class="project-list">
+			<div class="row">
+				<div class="col-lg-6">
+					<a href="#" class="project-item">
+						<picture>
+							<source srcset="images/dist/banner.webp" type="image/webp">
+							<img src="images/dist/banner.png">
+						</picture>
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a href="#" class="project-item">
+						<picture>
+							<source srcset="images/dist/banner.webp" type="image/webp">
+							<img src="images/dist/banner.png">
+						</picture>
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a href="#" class="project-item">
+						<picture>
+							<source srcset="images/dist/banner.webp" type="image/webp">
+							<img src="images/dist/banner.png">
+						</picture>
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a href="#" class="project-item">
+						<picture>
+							<source srcset="images/dist/banner.webp" type="image/webp">
+							<img src="images/dist/banner.png">
+						</picture>
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a href="#" class="project-item">
+						<picture>
+							<source srcset="images/dist/banner.webp" type="image/webp">
+							<img src="images/dist/banner.png">
+						</picture>
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a href="#" class="project-item">
+						<picture>
+							<source srcset="images/dist/banner.webp" type="image/webp">
+							<img src="images/dist/banner.png">
+						</picture>
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a href="#" class="project-item">
+						<picture>
+							<source srcset="images/dist/banner.webp" type="image/webp">
+							<img src="images/dist/banner.png">
+						</picture>
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a href="#" class="project-item">
+						<picture>
+							<source srcset="images/dist/banner.webp" type="image/webp">
+							<img src="images/dist/banner.png">
+						</picture>
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a href="#" class="project-item">
+						<picture>
+							<source srcset="images/dist/banner.webp" type="image/webp">
+							<img src="images/dist/banner.png">
+						</picture>
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a href="#" class="project-item">
+						<picture>
+							<source srcset="images/dist/banner.webp" type="image/webp">
+							<img src="images/dist/banner.png">
+						</picture>
+					</a>
+				</div>
+			</div>
+		</div>
+		<nav class="pagination-wrapper poster-pagination">
+			<ul class="pagination">
+				<li class="page-item disc">
+					<a href="#" class="page-link">
+						<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M8.14886 13.0488L2.53911 7.43907L8.14887 1.82931" stroke="#171719" stroke-width="3" stroke-linecap="round"/>
+						</svg>
+					</a>
+				</li>
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item active"><a class="page-link" href="#">3</a></li>
+				<li class="page-item"><a class="page-link" href="#">4</a></li>
+				<li class="page-item disc" v-if="hasNextPage">
+					<a href="#" class="page-link" @click.prevent="page = +page + 1">
+						<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.78308 1.95117L7.39283 7.56093L1.78308 13.1707" stroke="#171719" stroke-width="3" stroke-linecap="round"/>
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</section>
+	
+
+<!--#include virtual="/parts/footer.html" -->

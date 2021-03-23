@@ -1,6 +1,8 @@
 <!--#set var="title" value="Eurostar - международное концертное агенство" -->
 <!--#include virtual="/parts/header.html" -->
 
+<!--#include virtual="/parts/preloader.html" -->
+
 <section class="banner">
 	<div class="banner-slider swiper-container">
 		<div class="banner-slider__wrapper swiper-wrapper">
@@ -439,7 +441,7 @@
 	</div>
 </section>
 
-<section class="contacts section">
+<section class="contacts section home">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 d-flex justify-content-between">
@@ -490,9 +492,9 @@
 					<div class="form__title">Форма обратной связи</div>
 					<p class="form__description">Заполните форму и мы свяжемся с Вами в ближайшее время</p>
 					<div class="form-group flex">
-						<input type="text" placeholder="Имя" name="name" minlength="3" required>
-						<input type="text" placeholder="Телефон" name="phone" required>
-						<input type="email" placeholder="Email" required minlength="4">
+						<input type="text" placeholder="Имя" name="name" autocomplete="off" minlength="3" required>
+						<input type="text" placeholder="Телефон" name="phone" autocomplete="off" class="phone" required>
+						<input type="email" placeholder="Email" autocomplete="off" required minlength="4">
 					</div>
 					<div class="form-group">
 						<textarea name="message" placeholder="Сообщение"></textarea>

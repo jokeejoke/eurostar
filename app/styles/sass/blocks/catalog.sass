@@ -137,9 +137,9 @@
       &:hover
         color: $titlecolor !important
         svg
-          fill: $titlecolor
+          fill: $titlecolor !important
       svg
-        fill: $textcolor
+        fill: $textcolor !important
         margin-bottom: 5px
         margin-right: 8px
         transition: $trs
@@ -396,7 +396,9 @@
 
 // Preloader Styles
 .lds-ring
-  display: inline-block
+  display: flex
+  align-items: center
+  justify-content: center
   position: relative
   width: 160px
   height: 160px
