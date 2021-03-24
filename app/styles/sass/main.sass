@@ -1,6 +1,15 @@
 @import config
 @import "blocks/**/*"
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+input[type=number]
+  -moz-appearance:textfield
+
+
 .pos-r
 	position: relative
 
@@ -289,6 +298,50 @@
     margin-top: -7px
     +media-breakpoint-down(sm)
       flex-direction: column
+    .password
+      display: flex
+      justify-content: space-between
+      width: 100%
+      +media-breakpoint-down(sm)
+        flex-direction: column
+      input
+        flex: 0 0 66%
+        width: 100%
+        max-width: 100%
+        padding-left: 19px
+        font-size: 16px
+        line-height: 19px
+      .theme-btn-wb
+        flex: 0 0 32%
+        padding: 18px
+        +media-breakpoint-down(sm)
+          height: 55px
+  .section-btn
+    position: relative
+    top: unset
+    right: unset
+    +media-breakpoint-down(md)
+      bottom: unset
+      left: unset
+  .site-phones
+    margin-top: 26px
+    +media-breakpoint-down(sm)
+      margin-top: 19px
+
+.rider-popup
+  .form__description
+    margin-bottom: 19px
+  .form-footer
+    margin-top: 167px
+    +media-breakpoint-down(sm)
+      margin-top: 59px
+    input[type="number"]
+      border: 1px solid rgba(255, 255, 255, 0.18)
+      border-radius: 5px
+      +media-breakpoint-down(sm)
+        margin-bottom: 10px
+        height: 55px
+        padding: 18px 19px
 
 .form-popup
   max-width: 762px
