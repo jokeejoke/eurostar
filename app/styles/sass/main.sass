@@ -136,6 +136,9 @@ input[type=number]
 			svg
 				fill: $textcolor
 
+.section-btn svg
+  margin-bottom: 5px
+
 .section-title
   display: inline-block
 
@@ -223,18 +226,42 @@ input[type=number]
     color: rgba(255, 255, 255, 0.57)
     +media-breakpoint-down(sm)
       padding: 12px 13px
-  .custom-file-upload
-    cursor: pointer
+  .upload-block
     position: absolute
     bottom: 13px
     right: 16px
-    line-height: 20px
-    color: rgba(255, 255, 255, 0.61)
-    transition: $trs
-    z-index: 11
     +media-breakpoint-down(sm)
       bottom: -47px
       left: 0
+      z-index: 99
+      width: 100%
+    &.uploaded
+      padding-right: 20px
+      .delete
+        display: block
+      .custom-file-upload
+        color: $accent
+        svg
+          margin-right: 6px
+          margin-bottom: 3px
+          fill: $accent
+          +media-breakpoint-down(sm)
+            margin-right: 17px
+    .delete
+      position: absolute
+      display: block
+      top: 0
+      right: 0
+      z-index: 15
+      cursor: pointer
+      display: none
+      svg
+        fill: $accent
+  .custom-file-upload
+    cursor: pointer
+    line-height: 20px
+    color: rgba(255, 255, 255, 0.61)
+    z-index: 11
     &:hover
       color: $accent
       svg
@@ -242,6 +269,7 @@ input[type=number]
     svg
       transition: $trs
       fill: rgba(255,255, 255, .61)
+      margin-right: 5px
       +media-breakpoint-down(sm)
         margin-right: 12px
   .personal
@@ -349,6 +377,8 @@ input[type=number]
   +media-breakpoint-down(sm)
     margin: 0 9px
     max-width: 100%
+  +media-breakpoint-down(xs)
+    margin: 0
 .form-close
   position: absolute
   top: 26px
@@ -395,6 +425,12 @@ input[type=number]
   opacity: 1
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content
   opacity: 0
+.mfp-container
+  +media-breakpoint-down(xs)
+    padding: 0
+  .form
+    +media-breakpoint-down(xs)
+      border-radius: 0
 
 .hidden-md
   +media-breakpoint-down(md)

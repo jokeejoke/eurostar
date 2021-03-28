@@ -71,6 +71,7 @@
       margin-bottom: 10px 
   &-item
     position: relative
+    display: block
     box-shadow: 0px 2px 22px rgba(9, 15, 23, 0.28)
     background: #222225
     border-radius: 10px
@@ -78,6 +79,24 @@
     +media-breakpoint-down(sm)
       display: flex
       padding: 13px 10px
+    &:hover
+      text-decoration: none
+      &::after
+        opacity: 1
+      .poster-item__btn
+        background: $textcolor
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      border: 1px solid $accent
+      border-radius: 10px
+      opacity: 0
+      z-index: 1
+      transition: $trs
     &__img
       position: relative
       height: 298px
@@ -106,6 +125,7 @@
     &__btn
       font-size: 12px
       line-height: 14px
+      border: none
     &__info
       margin-top: 7px
       +media-breakpoint-down(sm)
@@ -114,6 +134,7 @@
       font-size: 14px
       font-weight: 600
       line-height: 20px
+      color: $textcolor
       +media-breakpoint-down(xs)
         line-height: 1.6
     &-list
